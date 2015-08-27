@@ -1,8 +1,7 @@
 Angular Boilerplate
 ==========
 
-Demo APP for creating a "my APP" using AngularJS
-
+Angular Boilerplate for easy project bootstrap
 ==========
 
 In order to run the development version:
