@@ -287,7 +287,8 @@ module.exports = function (grunt) {
     concurrent: {
       server: [
         'less',
-        'copy:styles'
+        'copy:styles',
+        'newer:jshint'
       ],
       test: [
         'less',
@@ -380,9 +381,4 @@ module.exports = function (grunt) {
     'usemin'
   ]);
 
-  grunt.registerTask('default', [
-    'newer:jshint',
-    'test',
-    'build'
-  ]);
 };
