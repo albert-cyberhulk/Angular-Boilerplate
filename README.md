@@ -1,4 +1,4 @@
-My APP
+Angular Boilerplate
 ==========
 
 Demo APP for creating a "my APP" using AngularJS
