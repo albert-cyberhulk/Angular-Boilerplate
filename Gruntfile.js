@@ -29,15 +29,17 @@ module.exports = function (grunt) {
     watch: {
       js: {
         files: ['{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js'],
-        tasks: []
+        tasks: ['newer:jshint:all']
       },
       jsTest: {
         files: ['test/spec/{,**/}*.js'],
-        tasks: ['karma']
+        tasks: ['newer:jshint:test', 'karma']
       },
-      styles: {
-        files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
-        tasks: ['newer:copy:styles', 'autoprefixer']
+      less: {
+        files: [
+          '<%= yeoman.app %>/styles/**/*.less',
+        ],
+        tasks: ['less', 'autoprefixer']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -87,7 +89,39 @@ module.exports = function (grunt) {
         }
       }
     },
-
+    // Make sure code styles are up to par and there are no obvious mistakes
+    jshint: {
+      options: {
+        jshintrc: '.jshintrc',
+        reporter: require('jshint-stylish')
+      },
+      all: [
+        'Gruntfile.js',
+        '<%= yeoman.app %>/scripts/{,*/}*.js'
+      ],
+      test: {
+        options: {
+          jshintrc: 'test/.jshintrc'
+        },
+        src: ['test/spec/{,*/}*.js']
+      }
+    },
+    // compiles less files to css
+    less: {
+      options: {
+        paths: ['styles']
+      },
+      // target name
+      src: {
+        expand: true,
+        cwd: '<%= yeoman.app%>',
+        src: [
+          'styles/**/*.less'
+        ],
+        dest: '.tmp/',
+        ext: '.css'
+      }
+    },
     // Empties folders to start fresh
     clean: {
       dist: {
@@ -118,9 +152,9 @@ module.exports = function (grunt) {
       }
     },
 
-    
 
-    
+
+
 
     // Renames files for browser caching purposes
     rev: {
@@ -252,12 +286,15 @@ module.exports = function (grunt) {
     // Run some tasks in parallel to speed up the build process
     concurrent: {
       server: [
+        'less',
         'copy:styles'
       ],
       test: [
+        'less',
         'copy:styles'
       ],
       dist: [
+        'less',
         'copy:styles',
         'imagemin',
         'svgmin',
@@ -344,6 +381,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
+    'newer:jshint',
     'test',
     'build'
   ]);
