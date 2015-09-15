@@ -36,7 +36,6 @@ describe('MainCtrl', function () {
    });
 
   it("Should expect MainController to be initialized", function() {
-    console.log(MockHttpResponseWrapper);
     expect(controller).toBeDefined();
   });
 
