@@ -11,7 +11,7 @@
  * @class MockHttpResponseWrapper
  * contains methods and data for Mock Backend dummy data
  */
-window.MockHttpResponseWrapper = {
+var MockHttpResponseWrapper = {
 
   MockData: {},
 
