@@ -51,14 +51,6 @@ app.directives = angular.module('RxDirectives', []);
  * ngRoute, ngMock, AppServices, AppControllers, AppDirectives
  */
 angular.module('App', Injectables.serve)
-  .config(function ($routeProvider) {
-    //configuring application routes
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
+  .config(function () {
+
  });

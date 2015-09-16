@@ -14,7 +14,7 @@ var Injectables = (function() {
 
   return {
       serve: [
-        'ngRoute',
+        //'ngRoute',
         'ngMockE2E',
         //'RxConfig',
         'RxServices',
@@ -22,7 +22,7 @@ var Injectables = (function() {
         'RxDirectives'
       ],
       build: [
-        'ngRoute',
+        //'ngRoute',
         //'RxConfig',
         'RxServices',
         'RxControllers',
