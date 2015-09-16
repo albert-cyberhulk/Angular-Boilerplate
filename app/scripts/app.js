@@ -37,9 +37,7 @@ angular.module('RxDirectives', []);
  */
 angular.module('App', [
   //'ngRoute',
-  /*mocks*///Do not remove, used by grunt
   'ngMockE2E',
-  /*endmocks*///Do not remove, used by grunt
   'ui.router',
   'AppTemplates',
   //'RxConfig',
