@@ -166,6 +166,18 @@ module.exports = function (grunt) {
       }
     },
 
+    // Compiles angular templates to JS for fast load and user experience
+    html2js: {
+      options: {
+        // custom options, see below
+      },
+      main: {
+        src: ['<%= yeoman.app%>/views/**/*.html'],
+        dest: '<%= yeoman.app%>/scripts/templates.js'
+      }
+    },
+
+
     // Reads HTML for usemin blocks to enable smart builds that automatically
     // concat, minify and revision files. Creates configurations in memory so
     // additional tasks can operate on them
@@ -327,6 +339,7 @@ module.exports = function (grunt) {
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
+    'html2js',
     'concat',
     'ngmin',
     'copy:dist',
