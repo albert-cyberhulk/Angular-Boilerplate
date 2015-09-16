@@ -18,7 +18,7 @@
 app.services.factory('Request', ['$http', '$log', '$q',
   function($http, $log, $q) {
   return {
-    internalHttpRequest: function(url, type, params) {
+    send: function(url, type, params) {
       var defer = $q.defer();
       if (typeof url !== 'string') {
         $log.error('Please pass string for url Param');
