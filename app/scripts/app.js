@@ -5,44 +5,29 @@
  * defines namespaces and modules
  * configures providers for further processing
  * @author Albert Stepanyan
- * @date 16.06.2014
+ * @date 16.09.2015
  */
 
 /**
- * @namespace app
- * main namespace of the application
- */
-var app = app || {};
-
-/**
- * @namespace app.module
- * main module namespace of the app
- */
-app.module = app.module || {};
-
-/**
- * @namespace app.services
+ * @namespace RxServices
  * @class AppServices
  * services module of the app
  */
-app.services = app.services || {};
-app.services = angular.module('RxServices', []);
+angular.module('RxServices', []);
 
 /**
- * @namespace app.controllers
+ * @namespace RxControllers
  * @class AppControllers
  * controllers module of the app
  */
-app.controllers = app.controllers || {};
-app.controllers = angular.module('RxControllers', []);
+angular.module('RxControllers', []);
 
 /**
- * @namespace app.directives
+ * @namespace RxDirectives
  * @class AppDirectives
  * directives module of the app
  */
-app.directives = app.directives || {};
-app.directives = angular.module('RxDirectives', []);
+angular.module('RxDirectives', []);
 
 /**
  * @class App

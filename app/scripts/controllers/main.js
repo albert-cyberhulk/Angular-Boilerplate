@@ -6,7 +6,7 @@
  * @date 27.08.2014
  */
 
-app.controllers.controller('MainCtrl', ['$scope', 'Request', '$log',
+angular.module('RxControllers').controller('MainCtrl', ['$scope', 'Request', '$log',
    function ($scope, Request, $log) {
 
    /**
