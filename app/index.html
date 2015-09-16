@@ -32,14 +32,18 @@
         <script src="bower_components/angular/angular.min.js"></script>
         <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
         <!-- endbuild -->
+        <!-- excludebuild-->
         <script src="mock/model.js"></script>
         <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+        <!-- endexcludebuild -->
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/injectables.js"></script>
+        <script src="scripts/templates.js"></script>
         <script src="scripts/app.js"></script>
         <script src="scripts/services/request.js"></script>
-        <script src="mock/backend.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <!-- endbuild -->
+        <!-- excludebuild-->
+        <script src="mock/backend.js"></script>
+        <!-- endexcludebuild -->
 </body>
 </html>

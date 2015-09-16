@@ -27,6 +27,12 @@ module.exports = function (grunt) {
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
+      templates: {
+        files: [
+          '<%= yeoman.app %>/views/**/*.html',
+        ],
+        tasks: ['html2js']
+      },
       js: {
         files: ['{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js'],
         tasks: ['newer:jshint:all']
@@ -166,7 +172,20 @@ module.exports = function (grunt) {
     // Compiles angular templates to JS for fast load and user experience
     html2js: {
       options: {
-        // custom options, see below
+        base: 'app',
+        module: 'AppTemplates',
+        singleModule: true,
+        useStrict: true,
+        htmlmin: {
+          collapseBooleanAttributes: true,
+          collapseWhitespace: true,
+          removeAttributeQuotes: true,
+          removeComments: true,
+          removeEmptyAttributes: true,
+          removeRedundantAttributes: true,
+          removeScriptTypeAttributes: true,
+          removeStyleLinkTypeAttributes: true
+        }
       },
       main: {
         src: ['<%= yeoman.app%>/views/**/*.html'],
@@ -320,6 +339,7 @@ module.exports = function (grunt) {
       'concurrent:server',
       'autoprefixer',
       'connect:livereload',
+      'html2js',
       'watch'
     ]);
   });

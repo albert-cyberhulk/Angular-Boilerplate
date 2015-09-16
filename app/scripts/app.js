@@ -35,7 +35,17 @@ angular.module('RxDirectives', []);
  * dependencies:
  * ngRoute, ngMock, AppServices, AppControllers, AppDirectives
  */
-angular.module('App', Injectables.serve)
+angular.module('App', [
+  //'ngRoute',
+  /*mocks*///Do not remove, used by grunt
+  'ngMockE2E',
+  /*endmocks*///Do not remove, used by grunt
+  'ui.router',
+  'AppTemplates',
+  //'RxConfig',
+  'RxServices',
+  'RxControllers',
+  'RxDirectives'])
   .config(function () {
 
  });
