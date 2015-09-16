@@ -8,7 +8,7 @@
 
 /**
  * @namespace app.services
- * @class Config
+ * @class Injectables
  */
 var Injectables = (function() {
 
