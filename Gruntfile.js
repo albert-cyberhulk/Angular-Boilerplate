@@ -35,11 +35,11 @@ module.exports = function (grunt) {
         files: ['test/spec/{,**/}*.js'],
         tasks: ['newer:jshint:test', 'karma']
       },
-      less: {
+      sass: {
         files: [
-          '<%= yeoman.app %>/styles/**/*.less',
+          '<%= yeoman.app %>/styles/**/*.scss',
         ],
-        tasks: ['less', 'autoprefixer']
+        tasks: ['sass', 'autoprefixer']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -106,17 +106,14 @@ module.exports = function (grunt) {
         src: ['test/spec/{,*/}*.js']
       }
     },
-    // compiles less files to css
-    less: {
-      options: {
-        paths: ['styles']
-      },
+    // compiles scss files to css
+    sass: {
       // target name
       src: {
         expand: true,
         cwd: '<%= yeoman.app%>',
         src: [
-          'styles/**/*.less'
+          'styles/**/*.scss'
         ],
         dest: '.tmp/',
         ext: '.css'
@@ -287,16 +284,16 @@ module.exports = function (grunt) {
     // Run some tasks in parallel to speed up the build process
     concurrent: {
       server: [
-        'less',
+        'sass',
         'copy:styles',
         'newer:jshint'
       ],
       test: [
-        'less',
+        'sass',
         'copy:styles'
       ],
       dist: [
-        'less',
+        'sass',
         'copy:styles',
         'imagemin',
         'svgmin',
