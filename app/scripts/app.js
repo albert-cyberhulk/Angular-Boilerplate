@@ -26,7 +26,7 @@ app.module = app.module || {};
  * services module of the app
  */
 app.services = app.services || {};
-app.services = angular.module('AppServices', []);
+app.services = angular.module('RxServices', []);
 
 /**
  * @namespace app.controllers
@@ -34,7 +34,7 @@ app.services = angular.module('AppServices', []);
  * controllers module of the app
  */
 app.controllers = app.controllers || {};
-app.controllers = angular.module('AppControllers', []);
+app.controllers = angular.module('RxControllers', []);
 
 /**
  * @namespace app.directives
@@ -42,7 +42,7 @@ app.controllers = angular.module('AppControllers', []);
  * directives module of the app
  */
 app.directives = app.directives || {};
-app.directives = angular.module('AppDirectives', []);
+app.directives = angular.module('RxDirectives', []);
 
 /**
  * @class App
@@ -50,13 +50,7 @@ app.directives = angular.module('AppDirectives', []);
  * dependencies:
  * ngRoute, ngMock, AppServices, AppControllers, AppDirectives
  */
-app.module = angular.module('App', [
-    'ngRoute',
-    'ngMockE2E',
-    'AppServices',
-    'AppControllers',
-    'AppDirectives'
-  ])
+angular.module('App', Injectables.serve)
   .config(function ($routeProvider) {
     //configuring application routes
     $routeProvider

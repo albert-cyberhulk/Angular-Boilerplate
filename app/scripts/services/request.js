@@ -4,7 +4,7 @@
  * handles Requests to Backend APIS
  * contains Ajax, Socker, and XMLRPC reques types
  * @author Albert Cyberhulk
- * @date 27.08.2014
+ * @date 16.10.2015
  */
 
 /**
