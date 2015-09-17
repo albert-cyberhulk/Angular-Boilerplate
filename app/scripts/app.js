@@ -44,7 +44,5 @@ angular.module('App', [
   //'RxConfig',
   'RxServices',
   'RxControllers',
-  'RxDirectives'])
-  .config(function () {
-
- });
+  'RxDirectives'
+]).config(function () {});

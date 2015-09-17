@@ -119,7 +119,9 @@ module.exports = function (grunt) {
       },
       all: [
         'Gruntfile.js',
-        '<%= yeoman.app %>/scripts/{,*/}*.js'
+        '<%= yeoman.app %>/scripts/{,*/}*.js',
+        '<%= yeoman.app %>/mock/{,*/}*.js',
+        '!<%= yeoman.app %>/scripts/templates.js',
       ],
       test: {
         options: {
@@ -361,6 +363,7 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('test', [
+    'newer:jshint:test',
     'clean:server',
     'concurrent:test',
     'autoprefixer',
@@ -369,6 +372,8 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build', [
+    'newer:jshint:all',
+    'test',
     'clean:dist',
     'useminPrepare',
     'concurrent:dist',

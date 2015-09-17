@@ -20,17 +20,17 @@ var MockBackend = MockBackend || {};
  * serves HTTP response to the front end
  * @returns {Object}
  */
-MockBackend.serve = function ($httpBackend) {
+MockBackend.serve = function($httpBackend) {
   //Ignores the static file requests
   $httpBackend.whenGET(/.*\.(html|js|css)$/i).passThrough();
   //Request for someurl
-  $httpBackend.whenGET('/topics').respond(function () {
+  $httpBackend.whenGET('/topics').respond(function() {
     return [200, window.getHttpBackendMockData()];
   });
 };
 
-  angular.module('App').run(function($httpBackend, $http) {
-     //Initializing mok backend server
+angular.module('App').run(function($httpBackend, $http) {
+  //Initializing mok backend server
 
-     MockBackend.serve($httpBackend, $http);
-  });
+  MockBackend.serve($httpBackend, $http);
+});

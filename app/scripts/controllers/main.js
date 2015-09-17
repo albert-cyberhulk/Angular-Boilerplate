@@ -6,14 +6,15 @@
  * @date 27.08.2014
  */
 
-angular.module('RxControllers').controller('MainCtrl', ['$scope', 'Request', '$log',
-   function ($scope, Request, $log) {
+angular.module('RxControllers').controller('MainCtrl', ['$scope',
+  function($scope) {
 
-   /**
-    * @method ._init_ bootstraps controller
-    */
-   $scope._init_ = function() {
-     // do bootstrap here
-   };
+    /**
+     * @method ._init_ bootstraps controller
+     */
+    $scope._init_ = function() {
+      // do bootstrap here
+    };
 
-}]);
+  }
+]);
