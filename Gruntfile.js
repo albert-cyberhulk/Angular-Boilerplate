@@ -95,6 +95,22 @@ module.exports = function (grunt) {
         }
       }
     },
+    preprocess : {
+      options: {
+        inline: true,
+        context : {
+          DEBUG: false
+        }
+      },
+      html : {
+        src : [
+          '<%= yeoman.dist %>/index.html'
+        ]
+      },
+      js : {
+        src: '.tmp/concat/scripts/scripts.js'
+      }
+    },
     // Make sure code styles are up to par and there are no obvious mistakes
     jshint: {
       options: {
@@ -359,6 +375,8 @@ module.exports = function (grunt) {
     'autoprefixer',
     'html2js',
     'concat',
+    'preprocess:html',
+    'preprocess:js',
     'ngmin',
     'copy:dist',
     'cssmin',
