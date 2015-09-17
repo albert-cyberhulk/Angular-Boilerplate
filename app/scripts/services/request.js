@@ -4,7 +4,7 @@
  * handles Requests to Backend APIS
  * contains Ajax, Socker, and XMLRPC reques types
  * @author Albert Cyberhulk
- * @date 27.08.2014
+ * @date 16.10.2015
  */
 
 /**
@@ -15,10 +15,10 @@
  * @param {Object} $log
  * @return {Object}
  */
-app.services.factory('Request', ['$http', '$log', '$q',
+angular.module('RxServices').factory('Request', ['$http', '$log', '$q',
   function($http, $log, $q) {
   return {
-    internalHttpRequest: function(url, type, params) {
+    send: function(url, type, params) {
       var defer = $q.defer();
       if (typeof url !== 'string') {
         $log.error('Please pass string for url Param');

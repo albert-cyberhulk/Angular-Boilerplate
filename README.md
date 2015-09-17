@@ -10,11 +10,13 @@ Please clone repository, checkout master branch
 
 Install globally nodeJS.
 
+Install globally Ruby And Sass.
+
 Install globally grunt CLI: "npm install grunt-cli -g"
 
 Install globally bower packaging: "npm install bower -g"
 
-Enter repository: cd Word-Cloud
+Enter repository: cd Angular-Boilerplate
 
 Run "npm install"
 

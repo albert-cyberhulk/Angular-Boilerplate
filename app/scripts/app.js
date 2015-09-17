@@ -5,44 +5,29 @@
  * defines namespaces and modules
  * configures providers for further processing
  * @author Albert Stepanyan
- * @date 16.06.2014
+ * @date 16.09.2015
  */
 
 /**
- * @namespace app
- * main namespace of the application
- */
-var app = app || {};
-
-/**
- * @namespace app.module
- * main module namespace of the app
- */
-app.module = app.module || {};
-
-/**
- * @namespace app.services
+ * @namespace RxServices
  * @class AppServices
  * services module of the app
  */
-app.services = app.services || {};
-app.services = angular.module('AppServices', []);
+angular.module('RxServices', []);
 
 /**
- * @namespace app.controllers
+ * @namespace RxControllers
  * @class AppControllers
  * controllers module of the app
  */
-app.controllers = app.controllers || {};
-app.controllers = angular.module('AppControllers', []);
+angular.module('RxControllers', []);
 
 /**
- * @namespace app.directives
+ * @namespace RxDirectives
  * @class AppDirectives
  * directives module of the app
  */
-app.directives = app.directives || {};
-app.directives = angular.module('AppDirectives', []);
+angular.module('RxDirectives', []);
 
 /**
  * @class App
@@ -50,21 +35,16 @@ app.directives = angular.module('AppDirectives', []);
  * dependencies:
  * ngRoute, ngMock, AppServices, AppControllers, AppDirectives
  */
-app.module = angular.module('App', [
-    'ngRoute',
-    'ngMockE2E',
-    'AppServices',
-    'AppControllers',
-    'AppDirectives'
-  ])
-  .config(function ($routeProvider) {
-    //configuring application routes
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
+angular.module('App', [
+  // @if DEBUG
+  'ngMockE2E',
+  // @endif
+  'ui.router',
+  'AppTemplates',
+  //'RxConfig',
+  'RxServices',
+  'RxControllers',
+  'RxDirectives'])
+  .config(function () {
+
  });

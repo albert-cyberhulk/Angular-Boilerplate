@@ -27,6 +27,12 @@ module.exports = function (grunt) {
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
+      templates: {
+        files: [
+          '<%= yeoman.app %>/views/**/*.html',
+        ],
+        tasks: ['html2js']
+      },
       js: {
         files: ['{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js'],
         tasks: ['newer:jshint:all']
@@ -35,11 +41,11 @@ module.exports = function (grunt) {
         files: ['test/spec/{,**/}*.js'],
         tasks: ['newer:jshint:test', 'karma']
       },
-      less: {
+      sass: {
         files: [
-          '<%= yeoman.app %>/styles/**/*.less',
+          '<%= yeoman.app %>/styles/**/*.scss',
         ],
-        tasks: ['less', 'autoprefixer']
+        tasks: ['sass', 'autoprefixer']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -89,6 +95,22 @@ module.exports = function (grunt) {
         }
       }
     },
+    preprocess : {
+      options: {
+        inline: true,
+        context : {
+          DEBUG: false
+        }
+      },
+      html : {
+        src : [
+          '<%= yeoman.dist %>/index.html'
+        ]
+      },
+      js : {
+        src: '.tmp/concat/scripts/scripts.js'
+      }
+    },
     // Make sure code styles are up to par and there are no obvious mistakes
     jshint: {
       options: {
@@ -106,17 +128,14 @@ module.exports = function (grunt) {
         src: ['test/spec/{,*/}*.js']
       }
     },
-    // compiles less files to css
-    less: {
-      options: {
-        paths: ['styles']
-      },
+    // compiles scss files to css
+    sass: {
       // target name
       src: {
         expand: true,
         cwd: '<%= yeoman.app%>',
         src: [
-          'styles/**/*.less'
+          'styles/**/*.scss'
         ],
         dest: '.tmp/',
         ext: '.css'
@@ -152,10 +171,6 @@ module.exports = function (grunt) {
       }
     },
 
-
-
-
-
     // Renames files for browser caching purposes
     rev: {
       dist: {
@@ -169,6 +184,31 @@ module.exports = function (grunt) {
         }
       }
     },
+
+    // Compiles angular templates to JS for fast load and user experience
+    html2js: {
+      options: {
+        base: 'app',
+        module: 'AppTemplates',
+        singleModule: true,
+        useStrict: true,
+        htmlmin: {
+          collapseBooleanAttributes: true,
+          collapseWhitespace: true,
+          removeAttributeQuotes: true,
+          removeComments: true,
+          removeEmptyAttributes: true,
+          removeRedundantAttributes: true,
+          removeScriptTypeAttributes: true,
+          removeStyleLinkTypeAttributes: true
+        }
+      },
+      main: {
+        src: ['<%= yeoman.app%>/views/**/*.html'],
+        dest: '<%= yeoman.app%>/scripts/templates.js'
+      }
+    },
+
 
     // Reads HTML for usemin blocks to enable smart builds that automatically
     // concat, minify and revision files. Creates configurations in memory so
@@ -225,7 +265,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>',
-          src: ['*.html', 'views/*.html'],
+          src: ['*.html'],
           dest: '<%= yeoman.dist %>'
         }]
       }
@@ -244,13 +284,6 @@ module.exports = function (grunt) {
       }
     },
 
-    // Replace Google CDN references
-    cdnify: {
-      dist: {
-        html: ['<%= yeoman.dist %>/*.html']
-      }
-    },
-
     // Copies remaining files to places other tasks can use
     copy: {
       dist: {
@@ -262,9 +295,9 @@ module.exports = function (grunt) {
           src: [
             '*.{ico,png,txt}',
             '.htaccess',
-            'bower_components/**/*',
             'images/{,*/}*.{webp}',
-            'fonts/*'
+            'fonts/*',
+            '!**/views/**'
           ]
         }, {
           expand: true,
@@ -286,48 +319,22 @@ module.exports = function (grunt) {
     // Run some tasks in parallel to speed up the build process
     concurrent: {
       server: [
-        'less',
+        'sass',
         'copy:styles',
         'newer:jshint'
       ],
       test: [
-        'less',
+        'sass',
         'copy:styles'
       ],
       dist: [
-        'less',
+        'sass',
         'copy:styles',
         'imagemin',
         'svgmin',
         'htmlmin'
       ]
     },
-
-    // By default, your `index.html`'s <!-- Usemin block --> will take care of
-    // minification. These next options are pre-configured if you do not wish
-    // to use the Usemin blocks.
-    // cssmin: {
-    //   dist: {
-    //     files: {
-    //       '<%= yeoman.dist %>/styles/main.css': [
-    //         '.tmp/styles/{,*/}*.css',
-    //         '<%= yeoman.app %>/styles/{,*/}*.css'
-    //       ]
-    //     }
-    //   }
-    // },
-    // uglify: {
-    //   dist: {
-    //     files: {
-    //       '<%= yeoman.dist %>/scripts/scripts.js': [
-    //         '<%= yeoman.dist %>/scripts/scripts.js'
-    //       ]
-    //     }
-    //   }
-    // },
-    // concat: {
-    //   dist: {}
-    // },
 
     // Test settings
     karma: {
@@ -337,7 +344,6 @@ module.exports = function (grunt) {
       }
     }
   });
-
 
   grunt.registerTask('serve', function (target) {
     if (target === 'dist') {
@@ -349,13 +355,9 @@ module.exports = function (grunt) {
       'concurrent:server',
       'autoprefixer',
       'connect:livereload',
+      'html2js',
       'watch'
     ]);
-  });
-
-  grunt.registerTask('server', function () {
-    grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
-    grunt.task.run(['serve']);
   });
 
   grunt.registerTask('test', [
@@ -371,10 +373,12 @@ module.exports = function (grunt) {
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
+    'html2js',
     'concat',
+    'preprocess:html',
+    'preprocess:js',
     'ngmin',
     'copy:dist',
-    'cdnify',
     'cssmin',
     'uglify',
     'rev',
