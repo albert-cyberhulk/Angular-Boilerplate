@@ -36,8 +36,9 @@ angular.module('RxDirectives', []);
  * ngRoute, ngMock, AppServices, AppControllers, AppDirectives
  */
 angular.module('App', [
-  //'ngRoute',
+  // @if DEBUG
   'ngMockE2E',
+  // @endif
   'ui.router',
   'AppTemplates',
   //'RxConfig',
