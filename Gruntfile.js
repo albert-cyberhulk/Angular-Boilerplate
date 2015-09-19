@@ -44,7 +44,7 @@ module.exports = function (grunt) {
         files: [
           '<%= project.app %>/styles/**/*.scss',
         ],
-        tasks: ['sass', 'autoprefixer']
+        tasks: ['scsslint', 'sass', 'autoprefixer']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -110,7 +110,7 @@ module.exports = function (grunt) {
         src: '.tmp/concat/scripts/scripts.js'
       }
     },
-    // Make sure code styles are up to par and there are no obvious mistakes
+    // Make sure JS code styles are up to par and there are no obvious mistakes
     jshint: {
       options: {
         jshintrc: '.jshintrc',
@@ -128,6 +128,18 @@ module.exports = function (grunt) {
         },
         src: ['test/spec/{,*/}*.js']
       }
+    },
+    // Make sure SCSS code styles are up to par and there are no obvious mistakes
+    scsslint: {
+      allFiles: [
+        '<%= project.app %>/styles/{,*/}*.scss',
+      ],
+      options: {
+        bundleExec: false,
+        config: '.scss-lint.yml',
+        reporterOutput: 'scss-lint-report.xml',
+        colorizeOutput: true
+      },
     },
     // compiles scss files to css
     sass: {
@@ -320,6 +332,7 @@ module.exports = function (grunt) {
     // Run some tasks in parallel to speed up the build process
     concurrent: {
       server: [
+        'scsslint',
         'sass',
         'copy:styles',
         'newer:jshint'
@@ -362,6 +375,7 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('test', [
+    'scsslint',
     'newer:jshint:test',
     'clean:server',
     'concurrent:test',
@@ -371,6 +385,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build', [
+    'scsslint',
     'newer:jshint:all',
     'test',
     'clean:dist',

@@ -10,7 +10,11 @@ Please clone repository, checkout master branch
 
 Install globally nodeJS.
 
-Install globally Ruby And Sass.
+Install globally Ruby.
+
+Install SASS "sudo gem install sass"
+
+Install SCSS lint "sudo gem install scss_lint"
 
 Install globally grunt CLI: "npm install grunt-cli -g"
 

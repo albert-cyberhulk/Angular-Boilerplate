@@ -23,6 +23,7 @@
     "grunt-ngmin": "~0.0.3",
     "grunt-preprocess": "^5.0.1",
     "grunt-rev": "~0.1.0",
+    "grunt-scss-lint": "^0.3.8",
     "grunt-svgmin": "~0.2.0",
     "grunt-usemin": "~2.0.0",
     "jshint-stylish": "~0.1.3",
