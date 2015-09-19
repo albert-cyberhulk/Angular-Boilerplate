@@ -350,13 +350,23 @@ module.exports = function (grunt) {
       ]
     },
 
-    // Test settings
+    // Karma settings
     karma: {
       unit: {
         configFile: 'karma.conf.js',
         singleRun: true
       }
+    },
+
+    // Protractor settings
+    protractor: {
+      options: {
+        keepAlive: true,
+        configFile: 'protractor.conf.js'
+      },
+      run: {}
     }
+
   });
 
   grunt.registerTask('serve', function (target) {
@@ -381,7 +391,8 @@ module.exports = function (grunt) {
     'concurrent:test',
     'autoprefixer',
     'connect:test',
-    'karma'
+    'karma',
+    'protractor:run'
   ]);
 
   grunt.registerTask('build', [
