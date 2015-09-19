@@ -44,7 +44,7 @@ module.exports = function (grunt) {
         files: [
           '<%= project.app %>/styles/**/*.scss',
         ],
-        tasks: ['sass', 'autoprefixer']
+        tasks: ['scsslint', 'sass', 'autoprefixer']
       },
       gruntfile: {
         files: ['Gruntfile.js']
@@ -332,6 +332,7 @@ module.exports = function (grunt) {
     // Run some tasks in parallel to speed up the build process
     concurrent: {
       server: [
+        'scsslint',
         'sass',
         'copy:styles',
         'newer:jshint'
@@ -374,6 +375,7 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('test', [
+    'scsslint',
     'newer:jshint:test',
     'clean:server',
     'concurrent:test',
@@ -383,6 +385,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build', [
+    'scsslint',
     'newer:jshint:all',
     'test',
     'clean:dist',
