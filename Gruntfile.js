@@ -384,6 +384,10 @@ module.exports = function (grunt) {
     ]);
   });
 
+  grunt.registerTask('e2e', [
+    'protractor:run'
+  ]);
+
   grunt.registerTask('test', [
     'scsslint',
     'newer:jshint:test',
@@ -391,8 +395,7 @@ module.exports = function (grunt) {
     'concurrent:test',
     'autoprefixer',
     'connect:test',
-    'karma',
-    'protractor:run'
+    'karma'
   ]);
 
   grunt.registerTask('build', [
