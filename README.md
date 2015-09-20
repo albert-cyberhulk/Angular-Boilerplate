@@ -20,6 +20,10 @@ Install globally grunt CLI: "npm install grunt-cli -g"
 
 Install globally bower packaging: "npm install bower -g"
 
+Install globally protractor "npm install protractor -g"
+
+Install globally phantomjs "npm install phantomjs -g"
+
 Enter repository: cd Angular-Boilerplate
 
 Run "npm install"
