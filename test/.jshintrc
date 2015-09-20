@@ -30,6 +30,8 @@
     "expect": false,
     "inject": false,
     "it": false,
-    "spyOn": false
+    "spyOn": false,
+    "element": false,
+    "by": false
   }
 }

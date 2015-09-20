@@ -6,7 +6,7 @@ Angular Boilerplate for easy project bootstrap
 
 In order to run the development version:
 
-Please clone repository, checkout master branch
+Clone repository, checkout master branch
 
 Install globally nodeJS.
 
@@ -20,19 +20,23 @@ Install globally grunt CLI: "npm install grunt-cli -g"
 
 Install globally bower packaging: "npm install bower -g"
 
+Install globally protractor "npm install protractor -g"
+
+Install globally phantomjs "npm install phantomjs -g"
+
 Enter repository: cd Angular-Boilerplate
 
 Run "npm install"
 
 Run "bower install"
 
-whenever everything successfully complete, run "grunt serve" from CLI
+Whenever everything successfully complete, run "grunt serve" from CLI
 
 In your default browser you will see a new tab: "http://localhost:9000/#/"
 
 Application is running using actual XMLHTTPRequest layer with stubbed mock backend
 
-that intercepts and makes response to emulate more developer environment
+that intercepts and makes response to emulate mock backend
 
 ===========
 
@@ -40,30 +44,26 @@ In order to run the production version of app:
 
 do all the above mentioned steps,
 
-in CLI instead of "grunt build", write "grunt build"
+in CLI instead of "grunt serve", write "grunt build"
 
 You will see a /dist folder in project root folder
+
+Note, build will fail if JSLint, SCSSLint or Unit tests fail
 
 Run index.html of the dist folder from any webserver you wish, e.g Apache, Node Http-Server or CLI Python server
 
 ===========
 
-Dist folder is about 4.6 MB from which 4.5 MB is bower-components helper bower
-
-files and libraries, which can in production should be replaced by Cloud CDN urls E.G Cloudinary
-
-===========
-
-Script images and styles files are minimized and cached, also automatic
-
-cache versioning is implemented in production version
+Scripts, images, svgs and styles are minimized and cached
 
 ===========
 
 Tests:
 
-In order to run tests input "grunt test" command in CLI and you will see
+In order to run Unit tests separately run "grunt test" command in CLI and you will see
 
-output in terminal with all existing tests
+output in terminal with all existing test assertions
 
-Tests are being run automatically when grunt build is done for production version
+In order to run e2e tests with protractor run "grunt e2e" command in CLI and you will see
+
+output in terminal with all existing test assertions

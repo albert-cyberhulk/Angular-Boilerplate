@@ -5,20 +5,10 @@
  * @author Albert Cyberhulk
  * @date 19.09.2015
  */
- describe('angularjs homepage todo list', function() {
-  it('should add a todo', function() {
-    browser.get('https://angularjs.org');
-
-    element(by.model('todoList.todoText')).sendKeys('write first protractor test');
-    element(by.css('[value="add"]')).click();
-
-    var todoList = element.all(by.repeater('todo in todoList.todos'));
-    expect(todoList.count()).toEqual(3);
-    expect(todoList.get(2).getText()).toEqual('write first protractor test');
-
-    // You wrote your first test, cross it off the list
-    todoList.get(2).element(by.css('input')).click();
-    var completedAmount = element.all(by.css('.done-true'));
-    expect(completedAmount.count()).toEqual(2);
+describe('Project example test', function() {
+  it('Should have main container', function() {
+    browser.get('http://127.0.0.1:9000/');
+    var myElement = element(by.css('.container'));
+    expect(myElement.isPresent()).toBe(true);
   });
 });

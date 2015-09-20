@@ -1,4 +1,18 @@
+'use strict';
+
 exports.config = {
   specs: ['test/e2e/**/*.js'],
-  baseUrl: 'http://localhost:9001'
+  capabilities: {
+    browserName: 'phantomjs'
+  },
+  jasmineNodeOpts: {
+    showColors: true,
+    defaultTimeoutInterval: 30000,
+    isVerbose: true
+  },
+  allScriptsTimeout: 20000,
+  onPrepare: function() {
+    browser.driver.get('http://127.0.0.1:9000/');
+  }
+
 };
