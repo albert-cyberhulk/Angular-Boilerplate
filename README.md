@@ -28,6 +28,8 @@ Enter repository: cd Angular-Boilerplate
 
 Run "npm install"
 
+Run "node node_modules/protractor/bin/webdriver-manager update" 
+
 Run "bower install"
 
 Whenever everything successfully complete, run "grunt serve" from CLI
