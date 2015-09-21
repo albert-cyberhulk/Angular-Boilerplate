@@ -66,6 +66,8 @@ In order to run Unit tests separately run "grunt test" command in CLI and you wi
 
 output in terminal with all existing test assertions
 
-In order to run e2e tests with protractor run "grunt e2e" command in CLI and you will see
+In order to run e2e tests with protractor run "grunt serve"
+
+to start local server then run "grunt e2e" command in CLI and you will see
 
 output in terminal with all existing test assertions
