@@ -129,6 +129,10 @@ module.exports = function (grunt) {
         src: ['test/spec/{,*/}*.js', 'test/e2e/{,*/}*.js']
       }
     },
+    // Adding ng-docs
+    ngdocs: {
+      all: ['<%= project.app %>/scripts/**/*.js']
+    },
     // Make sure SCSS code styles are up to par and there are no obvious mistakes
     scsslint: {
       allFiles: [
@@ -260,7 +264,13 @@ module.exports = function (grunt) {
           cwd: '<%= project.app %>/images',
           src: '{,*/}*.svg',
           dest: '<%= project.dist %>/images'
-        }]
+        }, {
+          expand: true,
+          cwd: '<%= project.app %>/fonts',
+          src: '{,*/}*.svg',
+          dest: '<%= project.dist %>/fonts'
+        }
+      ]
       }
     },
     htmlmin: {
@@ -326,6 +336,12 @@ module.exports = function (grunt) {
         cwd: '<%= project.app %>/styles',
         dest: '.tmp/styles/',
         src: '{,*/}*.css'
+      },
+      fonts: {
+        expand: true,
+        cwd: '<%= project.app %>/fonts',
+        dest: '<%= project.dist %>/fonts/',
+        src: '{,*/}*.**'
       }
     },
 
@@ -354,6 +370,7 @@ module.exports = function (grunt) {
     karma: {
       unit: {
         configFile: 'karma.conf.js',
+        autoWatch: false,
         singleRun: true
       }
     },
@@ -403,6 +420,7 @@ module.exports = function (grunt) {
     'newer:jshint:all',
     'test',
     'clean:dist',
+    'ngdocs',
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
