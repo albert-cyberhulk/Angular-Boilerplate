@@ -1,8 +1,14 @@
 node_modules
 dist
 .tmp
+docs/
 .sass-cache
 app/bower_components
 app/styles/*.css
 app/scripts/templates.js
 scss-lint-report.xml
+*.iml
+npm-debug.log
+coverage/
+.idea/
+.idea
