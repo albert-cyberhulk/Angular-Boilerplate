@@ -28,7 +28,7 @@ Enter repository: cd Angular-Boilerplate
 
 Run "npm install"
 
-Run "node node_modules/protractor/bin/webdriver-manager update" 
+Run "node node_modules/protractor/bin/webdriver-manager update"
 
 Run "bower install"
 
@@ -57,6 +57,16 @@ Run index.html of the dist folder from any webserver you wish, e.g Apache, Node 
 ===========
 
 Scripts, images, svgs and styles are minimized and cached
+
+===========
+
+Build system generates the following report packages
+
+/docs -> Code documentation based on ngDocs
+
+/coverage -> Code coverage report
+
+src -> generated if you run "grunt todos" report for FIXME TODOS in source code
 
 ===========
 
