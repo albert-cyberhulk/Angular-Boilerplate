@@ -10,7 +10,8 @@ module.exports = {
     'scsslint',
     'sass',
     'copy:styles',
-    'newer:jshint'
+    'newer:jshint',
+    'todo'
   ],
   test: [
     'sass',

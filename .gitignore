@@ -7,8 +7,10 @@ app/bower_components
 app/styles/*.css
 app/scripts/templates.js
 scss-lint-report.xml
+todo.md
 *.iml
 npm-debug.log
 coverage/
 .idea/
 .idea
+npm-debug.log
