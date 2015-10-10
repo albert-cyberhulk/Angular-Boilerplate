@@ -13,7 +13,7 @@
  * @class AppServices
  * services module of the app
  */
-angular.module('RxServices', []);// TODO
+angular.module('RxServices', []);
 
 /**
  * @namespace RxControllers

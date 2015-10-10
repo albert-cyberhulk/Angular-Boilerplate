@@ -43,7 +43,7 @@ module.exports = function (grunt) {
     'protractor:run'
   ]);
 
-  grunt.registerTask('test', [// TODO
+  grunt.registerTask('test', [
     'scsslint',
     'newer:jshint:test',
     'clean:server',
