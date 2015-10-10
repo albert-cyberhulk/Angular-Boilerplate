@@ -25,5 +25,5 @@ module.exports = {
       }
     }
   },
-  src : ['Gruntfile.js', 'app/scripts/app.js', 'app/script/*.js', 'test/**/*.js']
+  src : ['Gruntfile.js', 'app/scripts/app.js', 'app/scripts/**/*.js', 'test/**/*.js']
 };
