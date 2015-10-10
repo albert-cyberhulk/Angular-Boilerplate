@@ -66,7 +66,7 @@ Build system generates the following report packages
 
 /coverage -> Code coverage report
 
-scss-lint-report.xml -> scss lint report
+src -> generated if you run "grunt todos" report for FIXME TODOS in source code
 
 ===========
 
