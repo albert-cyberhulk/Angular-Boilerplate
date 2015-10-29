@@ -1,5 +1,6 @@
 node_modules
 dist
+.DS_Store
 .tmp
 docs/
 .sass-cache
@@ -10,8 +11,12 @@ scss-lint-report.xml
 *.iml
 npm-debug.log
 coverage/
-.idea/
 .idea
+.idea/
 npm-debug.log
 src
 phantomjsdriver.log
+.DS_Store
+/nbproject/private/
+test/e2e/screenshots/*.png
+nbproject/
