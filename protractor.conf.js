@@ -23,7 +23,6 @@ exports.config = {
   onPrepare: function () {
     browser.driver.manage().window().setSize(1366,768);
     jasmine.getEnv().addReporter(new ScreenshotReporter());
-      //browser.driver.get('http://127.0.0.1:9000/');
   }
 
 };
