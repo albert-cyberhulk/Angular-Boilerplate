@@ -30,13 +30,14 @@ module.exports = function (grunt) {
     }
 
     grunt.task.run([
-      'clean:server',
-      'concurrent:server',
+      'clean:tmp',
+      'concurrent:server',  //'scsslint', 'sass', 'copy:styles', 'newer:jshint', 'eslint:browserFiles'
       'autoprefixer',
       'connect:livereload',
       'html2js',
       'watch'
     ]);
+
   });
 
   grunt.registerTask('e2e', [
@@ -46,8 +47,10 @@ module.exports = function (grunt) {
   grunt.registerTask('test', [
     'scsslint',
     'newer:jshint:test',
-    'clean:server',
-    'concurrent:test',
+    'eslint:testFiles',
+    'clean:tmp',
+    'concurrent:test', //sass copy:styles
+    'html2js',
     'autoprefixer',
     'connect:test',
     'karma'
@@ -55,15 +58,15 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'checkDependencies',
-    'scsslint',
-    'newer:jshint:all',
-    'test',
     'clean:dist',
+    'scsslint',
+    'jshint:all',
+    'html2js',
     'ngdocs',
     'useminPrepare',
-    'concurrent:dist',
+    'concurrent:dist', //'sass', 'copy:styles', 'copy:mockImages', 'imagemin', 'svgmin', 'htmlmin'
     'autoprefixer',
-    'html2js',
+    'test',
     'concat',
     'preprocess:html',
     'preprocess:js',
