@@ -16,5 +16,5 @@ module.exports = {
       ]
     }]
   },
-  server: '.tmp'
+  tmp: '.tmp'
 };
