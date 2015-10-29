@@ -72,11 +72,10 @@ module.exports = function (grunt) {
     'preprocess:js',
     'ngmin',
     'copy:dist',
-    'copy:marvin',
     'cssmin',
     'uglify',
     'rev',
     'usemin'
- ]);
+  ]);
 
 };
