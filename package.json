@@ -42,7 +42,8 @@
     "phantomjs": "^1.9.18",
     "protractor": "^2.2.0",
     "requirejs": "~2.1.20",
-    "time-grunt": "~0.2.1"
+    "time-grunt": "~0.2.1",
+    "eslint": "1.6.0"
   },
   "engines": {
     "node": ">=0.8.0"
