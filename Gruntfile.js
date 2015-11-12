@@ -44,6 +44,10 @@ module.exports = function (grunt) {
     'protractor:run'
   ]);
 
+  grunt.registerTask('api', [
+    'mochaTest'
+  ]);
+
   grunt.registerTask('test', [
     'scsslint',
     'newer:jshint:test',

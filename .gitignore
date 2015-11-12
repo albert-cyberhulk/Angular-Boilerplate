@@ -20,3 +20,4 @@ phantomjsdriver.log
 /nbproject/private/
 test/e2e/screenshots/*.png
 nbproject/
+mocha.txt
