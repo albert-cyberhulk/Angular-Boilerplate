@@ -22,10 +22,8 @@ angular.module('Mocks', []);
  * ngRoute, ngMock, AppServices, AppControllers, AppDirectives
  */
 angular.module('App', [
-  // @if DEBUG
   'ngMockE2E',
   'Mocks',
-  // @endif
   'ui.router',
   'AppTemplates'
 ]).config(function () {});
