@@ -6,7 +6,7 @@
  * @date 27.08.2014
  */
 
-angular.module('RxControllers').controller('MainCtrl', ['$scope',
+angular.module('App').controller('MainCtrl', ['$scope',
   function($scope) {
 
     /**

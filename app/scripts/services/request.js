@@ -15,7 +15,7 @@
  * @param {Object} $log
  * @return {Object}
  */
-angular.module('RxServices').factory('Request', ['$http', '$log', '$q',
+angular.module('App').factory('Request', ['$http', '$log', '$q',
   function($http, $log, $q) {
     return {
       send: function(url, type, params) {

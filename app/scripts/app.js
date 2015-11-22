@@ -9,25 +9,11 @@
  */
 
 /**
- * @namespace RxServices
- * @class AppServices
- * services module of the app
+ * @namespace Mocks
+ * @class Mocks
+ * Mocks module of the app
  */
-angular.module('RxServices', []);
-
-/**
- * @namespace RxControllers
- * @class AppControllers
- * controllers module of the app
- */
-angular.module('RxControllers', []);
-
-/**
- * @namespace RxDirectives
- * @class AppDirectives
- * directives module of the app
- */
-angular.module('RxDirectives', []);
+angular.module('Mocks', []);
 
 /**
  * @class App
@@ -36,13 +22,8 @@ angular.module('RxDirectives', []);
  * ngRoute, ngMock, AppServices, AppControllers, AppDirectives
  */
 angular.module('App', [
-  // @if DEBUG
   'ngMockE2E',
-  // @endif
+  'Mocks',
   'ui.router',
-  'AppTemplates',
-  //'RxConfig',
-  'RxServices',
-  'RxControllers',
-  'RxDirectives'
+  'AppTemplates'
 ]).config(function () {});
