@@ -29,21 +29,23 @@
         <!-- build:js scripts/vendor.js -->
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="bower_components/underscore/underscore.js"></script>
-        <script src="bower_components/angular/angular.min.js"></script>
-        <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-        <!-- endbuild -->
+        <script src="bower_components/angular/angular.js"></script>
         <!-- @if DEBUG -->
-        <script src="mock/model.js"></script>
         <script src="bower_components/angular-mocks/angular-mocks.js"></script>
         <!-- @endif -->
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <!-- endbuild -->
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/templates.js"></script>
         <script src="scripts/app.js"></script>
+        <!-- @if DEBUG -->
+        <!--Mocks-->
+        <script src="modules/mocks/config/exception-urls.js"></script>
+        <script src="modules/mocks/config/request-urls.js"></script>
+        <script src="modules/mocks/mock-register.js"></script>
+        <!-- @endif -->
         <script src="scripts/services/request.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <!-- endbuild -->
-        <!-- @if DEBUG -->
-        <script src="mock/backend.js"></script>
-        <!-- @endif -->
 </body>
 </html>
