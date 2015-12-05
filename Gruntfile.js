@@ -35,6 +35,7 @@ module.exports = function (grunt) {
       'autoprefixer',
       'connect:livereload',
       'html2js',
+      'json',
       'watch'
     ]);
 

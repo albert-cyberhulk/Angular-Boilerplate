@@ -38,5 +38,12 @@ module.exports = {
       '.tmp/styles/{,*/}*.css',
       '<%= project.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
     ]
+  },
+  mocks: {
+    files: [
+      '<%= project.app %>/modules/mocks/**/*.json'
+    ],
+    event: ['changed', 'added', 'deleted'],
+    tasks: ['json']
   }
 };
