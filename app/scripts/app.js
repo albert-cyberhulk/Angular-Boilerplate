@@ -22,8 +22,21 @@ angular.module('Mocks', []);
  * ngRoute, ngMock, AppServices, AppControllers, AppDirectives
  */
 angular.module('App', [
+  // @if DEBUG
   'ngMockE2E',
   'Mocks',
+  // @endif
   'ui.router',
   'AppTemplates'
-]).config(function () {});
+]).config(function ($stateProvider, $urlRouterProvider) {
+  var Routes = {
+    main: {
+      name: 'main',
+      url: '/',
+      templateUrl: 'views/main.html',
+      controller: 'MainCtrl'
+    }
+  };
+  $urlRouterProvider.otherwise(Routes.main.url);
+  $stateProvider.state(Routes.main);
+});

@@ -8,7 +8,7 @@
  */
 
 /**
- * @namespace app.services
+ * @namespace app
  * @class Request
  * Angular factory service HTTP requests
  * @param {Object} $http

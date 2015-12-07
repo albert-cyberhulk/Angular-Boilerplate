@@ -60,6 +60,14 @@ Scripts, images, svgs and styles are minimized and cached
 
 ===========
 
+Build system generates the following compiled scripts
+
+app/scripts/template.js = responsible for js templates
+
+app/modules/mocks/models.js responsible for JSON mocks
+
+===========
+
 Build system generates the following report packages
 
 /docs -> Code documentation based on ngDocs
