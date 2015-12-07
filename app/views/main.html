@@ -1,7 +1,7 @@
 <div id="MainContainer">
 
   <ul>
-    <li ng-repeat="post in posts">
+    <li ng-repeat="post in posts track by $index">
       {{post.name}} // {{post.surname}}
     </li>
   </ul>
