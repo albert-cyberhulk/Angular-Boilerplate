@@ -21,7 +21,8 @@
 angular.module('Mocks').constant('RequestUrls', [
   {
     method: 'GET',
-    url: '\/api\/posts',
+    url: '/api/posts',
+    through: false,
     handler: function () {
       return [200, MockModels['posts']];
     }

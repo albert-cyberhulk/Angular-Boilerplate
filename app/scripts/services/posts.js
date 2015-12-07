@@ -13,9 +13,10 @@
  * @param {Object} Request
  * @return {Object}
  */
-angular.module('App').factory('Posts', ['Request', '$log', function() {
+angular.module('App').factory('Posts', ['Request', '$log', function(Request, $log) {
   return {
-    'name': 1,
-    'surname': 2
+    getPosts: function() {
+      return Request.send('/api/posts', 'get');
+    }
   };
 }]);

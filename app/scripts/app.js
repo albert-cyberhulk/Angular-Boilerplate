@@ -28,4 +28,15 @@ angular.module('App', [
   // @endif
   'ui.router',
   'AppTemplates'
-]).config(function () {});
+]).config(function ($stateProvider, $urlRouterProvider) {
+  var Routes = {
+    main: {
+      name: 'main',
+      url: '/',
+      templateUrl: 'views/main.html',
+      controller: 'MainCtrl'
+    }
+  };
+  $urlRouterProvider.otherwise(Routes.main.url);
+  $stateProvider.state(Routes.main);
+});

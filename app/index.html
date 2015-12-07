@@ -23,13 +23,13 @@
     <!--header of application-->
     <div ng-include src="'views/header.html'"></div>
     <!-- Add your site or application content here -->
-    <div class="container" ng-view=""></div>
+    <div class="container" ui-view id="main-view"></div>
     <!--footer of application-->
     <div ng-include src="'views/footer.html'"></div>
         <!-- build:js scripts/vendor.js -->
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="bower_components/underscore/underscore.js"></script>
-        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
         <!-- endbuild -->
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
@@ -45,8 +45,8 @@
         <!--Mocks-->
         <script src="bower_components/angular-mocks/angular-mocks.js"></script>
         <script src="modules/mocks/config/request-urls.js"></script>
-        <script src="modules/mocks/models.js"></script>
         <script src="modules/mocks/mock-register.js"></script>
+        <script src="modules/mocks/models.js"></script>
         <!-- @endif -->
 </body>
 </html>
