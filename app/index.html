@@ -30,18 +30,23 @@
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="bower_components/underscore/underscore.js"></script>
         <script src="bower_components/angular/angular.min.js"></script>
-        <script src="bower_components/angular-mocks/angular-mocks.js"></script>
         <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
         <!-- endbuild -->
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <!--Main files-->
         <script src="scripts/templates.js"></script>
         <script src="scripts/app.js"></script>
-        <!--Mocks-->
-        <script src="modules/mocks/config/exception-urls.js"></script>
-        <script src="modules/mocks/config/request-urls.js"></script>
-        <script src="modules/mocks/mock-register.js"></script>
+        <!--Logic-->
         <script src="scripts/services/request.js"></script>
+        <script src="scripts/services/posts.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <!-- endbuild -->
+        <!-- @if DEBUG -->
+        <!--Mocks-->
+        <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+        <script src="modules/mocks/config/request-urls.js"></script>
+        <script src="modules/mocks/models.js"></script>
+        <script src="modules/mocks/mock-register.js"></script>
+        <!-- @endif -->
 </body>
 </html>

@@ -5,6 +5,11 @@
  * @author Albert Cyberhulk
  * @date 22.11.2015
  */
-angular.module('Mocks').run(function ($injector, RequestUrls, ExceptionUrls, $httpBackend) {
-  
+angular.module('Mocks').run(function ($injector, RequestUrls, $httpBackend) {
+  var urlBase = '^(?:https?:)?(?:\/\/)?([^\/\?]+)';
+  // Looping through RequestUrls and handling them
+  angular.forEach(RequestUrls, function (r) {
+    $httpBackend.when(r.method, new RegExp(urlBase + r.url)).respond(r.handler);
+  });
+
 });
