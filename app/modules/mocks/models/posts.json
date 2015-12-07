@@ -1,4 +1,10 @@
-{
-  "name": 1,
-  "surname": 2
-}
+[
+  {
+    "name": "Albert",
+    "surname": "Cyberhulk"
+  },
+  {
+    "name": "Neo",
+    "surname": "Matrix"
+  }
+]

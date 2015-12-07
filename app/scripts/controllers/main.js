@@ -10,12 +10,17 @@ angular.module('App').controller('MainCtrl', ['$scope', 'Posts',
   function($scope, Posts) {
 
     /**
+     * @property scope posts
+     */
+    $scope.posts = [];
+
+    /**
      * @method getPosts
      * sample method to get posts in the app
      */
     $scope.getPosts = function() {
       Posts.getPosts().then(function(data) {
-        console.log(data);
+        $scope.posts = data;
       });
     };
 
