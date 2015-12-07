@@ -10,9 +10,9 @@ angular.module('Mocks').run(function (RequestUrls, $httpBackend) {
   angular.forEach(RequestUrls, function (r) {
     if (r.through) {
       // for relative urls
-      $httpBackend.when(r.method, new RegExp(r.url)).passThrough();
+      $httpBackend.when(r.method, r.url).passThrough();
       // for absolute urls
-      $httpBackend.when(r.method, new RegExp(urlBase + r.url)).passThrough();
+      $httpBackend.when(r.method, r.url).passThrough();
     }
     $httpBackend.when(r.method, r.url).respond(r.handler);
   });
