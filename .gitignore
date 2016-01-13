@@ -21,3 +21,4 @@ phantomjsdriver.log
 test/e2e/screenshots/*.png
 nbproject/
 mocha.txt
+test/yslow/reports/yslow.xml
