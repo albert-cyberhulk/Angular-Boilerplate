@@ -33,6 +33,8 @@
     "grunt-svgmin": "~0.2.0",
     "grunt-todos": "^0.3.0",
     "grunt-usemin": "~2.0.0",
+    "grunt-xsltproc": "^0.5.1",
+    "grunt-yslow-test": "^0.1.0",
     "gruntify-eslint": "^1.1.0",
     "jasmine-core": "^2.3.4",
     "jshint-stylish": "~0.1.3",
