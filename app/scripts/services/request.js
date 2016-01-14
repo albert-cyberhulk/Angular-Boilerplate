@@ -16,9 +16,9 @@
  * @return {Object}
  */
 angular.module('App').factory('Request', ['$http', '$log', '$q',
-  function($http, $log, $q) {
+  function ($http, $log, $q) {
     return {
-      send: function(url, type, params) {
+      send: function (url, type, params) {
         var defer = $q.defer();
         if (typeof url !== 'string') {
           $log.error('Please pass string for url Param');
@@ -38,9 +38,9 @@ angular.module('App').factory('Request', ['$http', '$log', '$q',
          * Sending HTTP Request based on created Config Object
          * returning Promise $http Object
          */
-        $http(conf).success(function(data) {
+        $http(conf).then(function (data) {
           defer.resolve(data);
-        }).error(function(error, status, headers, config) {
+        }, function (error, status, headers, config) {
           $log.info(error);
           defer.resolve(error);
         });

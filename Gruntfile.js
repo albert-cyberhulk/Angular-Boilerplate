@@ -83,4 +83,10 @@ module.exports = function (grunt) {
     'usemin'
   ]);
 
+  grunt.registerTask('yslowTest', [
+    'build',
+    'connect:dist',
+    'yslow_test',
+    'xsltproc'
+  ]);
 };
