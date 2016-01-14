@@ -7,7 +7,7 @@
  */
 module.exports = {
   options: {
-    stylesheet: 'yslow/pattern.xsl'
+    stylesheet: 'pattern.xsl'
   },
   compile: {
     files: {
