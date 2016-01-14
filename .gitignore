@@ -23,3 +23,5 @@ nbproject/
 mocha.txt
 app/modules/mocks/models.js
 test/yslow/reports/yslow.xml
+yslow/index.html
+yslow/reports/yslow.xml
