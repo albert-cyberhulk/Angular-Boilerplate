@@ -11,7 +11,7 @@ module.exports = {
       info: "grade",
       format: "junit",
       urls: ['http://localhost:9000'],
-      reports: ['test/yslow/reports/yslow.xml']
+      reports: ['yslow/reports/yslow.xml']
     },
     files: []
   }

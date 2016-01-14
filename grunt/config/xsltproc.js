@@ -7,11 +7,11 @@
  */
 module.exports = {
   options: {
-    stylesheet: 'test/yslow/pattern.xsl'
+    stylesheet: 'yslow/pattern.xsl'
   },
   compile: {
     files: {
-      'yslow/index.html': ['test/yslow/reports/yslow.xml']
+      'yslow/index.html': ['yslow/reports/yslow.xml']
     }
   }
 };
