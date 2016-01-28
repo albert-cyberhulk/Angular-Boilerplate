@@ -38,9 +38,9 @@ angular.module('App').factory('Request', ['$http', '$log', '$q',
          * Sending HTTP Request based on created Config Object
          * returning Promise $http Object
          */
-        $http(conf).then(function (data) {
+        $http(conf).success(function (data) {
           defer.resolve(data);
-        }, function (error, status, headers, config) {
+        }).error(function (error, status, headers, config) {
           $log.info(error);
           defer.resolve(error);
         });

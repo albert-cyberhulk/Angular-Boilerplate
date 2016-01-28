@@ -6,7 +6,7 @@
 
 module.exports = {
   options: {
-    browsers: ['last 1 version']
+    browsers: ['last 2 versions', 'ie 9', 'ie 10', 'ie 11']
   },
   dist: {
     files: [{

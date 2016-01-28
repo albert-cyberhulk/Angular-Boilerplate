@@ -6,7 +6,8 @@
     "jquery": "~2.1.4",
     "angular": "~1.4.5",
     "angular-ui-router": "~0.2.15",
-    "underscore": "~1.8.3"
+    "underscore": "~1.8.3",
+    "bootstrap-sass": "~3.3.6"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.5"
