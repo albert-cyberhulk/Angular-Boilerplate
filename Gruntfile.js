@@ -73,6 +73,7 @@ module.exports = function (grunt) {
     'autoprefixer',
     'test',
     'concat',
+    'strip_code',
     'preprocess:html',
     'preprocess:js',
     'ngmin',
