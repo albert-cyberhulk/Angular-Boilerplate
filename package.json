@@ -5,7 +5,7 @@
   "devDependencies": {
     "eslint": "1.6.0",
     "express": "^4.13.3",
-    "grunt": "~0.4.1",
+    "grunt": "^0.4.5",
     "grunt-autoprefixer": "~0.4.0",
     "grunt-check-dependencies": "^0.11.2",
     "grunt-concurrent": "~0.4.1",
@@ -21,6 +21,7 @@
     "grunt-contrib-uglify": "~0.2.0",
     "grunt-contrib-watch": "~0.5.2",
     "grunt-html2js": "^0.3.3",
+    "grunt-json": "^0.1.5",
     "grunt-karma": "~0.8.3",
     "grunt-mocha-test": "^0.12.7",
     "grunt-newer": "~0.5.4",
@@ -30,6 +31,7 @@
     "grunt-protractor-runner": "^2.1.0",
     "grunt-rev": "~0.1.0",
     "grunt-scss-lint": "^0.3.8",
+    "grunt-strip-code": "^0.1.2",
     "grunt-svgmin": "~0.2.0",
     "grunt-todos": "^0.3.0",
     "grunt-usemin": "~2.0.0",
@@ -51,8 +53,7 @@
     "request": "^2.65.0",
     "requirejs": "~2.1.20",
     "supertest": "^1.1.0",
-    "time-grunt": "~0.2.1",
-    "grunt-json": "^0.1.5"
+    "time-grunt": "~0.2.1"
   },
   "engines": {
     "node": ">=0.8.0"
