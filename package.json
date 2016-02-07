@@ -31,7 +31,6 @@
     "grunt-protractor-runner": "^2.1.0",
     "grunt-rev": "~0.1.0",
     "grunt-scss-lint": "^0.3.8",
-    "grunt-strip-code": "^0.1.2",
     "grunt-svgmin": "~0.2.0",
     "grunt-todos": "^0.3.0",
     "grunt-usemin": "~2.0.0",
