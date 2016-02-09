@@ -1,107 +1,133 @@
-Angular Boilerplate
-==========
+# Angular-Boilerplate
 
-Angular Boilerplate for easy project bootstrap
-==========
+> Angular Boilerplate for easy project bootstrap
 
-In order to run the development version:
+## Getting Started
+This boilerplate requires Grunt `~0.4.5` and NodeJS `~4.2.2`
 
-Clone repository, checkout master branch
+If you haven't used [Grunt](http://gruntjs.com/) or [nodeJS](https://nodejs.org) before, be sure to check out the [Grunt Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to use Grunt, additionally checkout [NodeJS documentation](https://nodejs.org/en/docs/). Once you're familiar with that process, you may install this boilerplate with the following steps :
 
-Install globally nodeJS.
 
-Install globally Ruby.
+##### Import a Git repository using the command line
 
-Install SASS "sudo gem install sass"
+```shell
+git clone https://github.com/albert-cyberhulk/Angular-Boilerplate.git
+```
 
-Install SCSS lint "sudo gem install scss_lint"
+#####  Install nodeJS on your preferred system
 
-Install globally grunt CLI: "npm install grunt-cli -g"
+_Download from official website_ [Official website](https://nodejs.org/en/download/)
 
-Install globally bower packaging: "npm install bower -g"
+#####  Install Ruby on your preferred system
 
-Install globally protractor "npm install protractor -g"
+_Download from official website_ [Official website](https://www.ruby-lang.org/de/downloads/)
 
-Install globally phantomjs "npm install phantomjs -g"
+## The 'cloudinary' task
 
-Enter repository: cd Angular-Boilerplate
+### Overview
+In your project's Gruntfile, add a section named `cloudinary` to the data object passed into `grunt.initConfig()`.
 
-Run "npm install"
+```js
+grunt.initConfig({
+  cloudinary: {
+      // Options for cloudinary
+      options: {},
+      // source files to be processed
+      files: [{}]
+    }
+});
+```
 
-Run "node node_modules/protractor/bin/webdriver-manager update"
+### Options
 
-Run "bower install"
+#### options.remove
+Type: `Boolean`
+Default value: `false`
 
-Whenever everything successfully complete, run "grunt serve" from CLI
+A Boolean value that is used remove the src files after upload (to be done in next release...).
 
-In your default browser you will see a new tab: "http://localhost:9000/#/"
+#### options.replace
+Type: `Boolean`
+Default value: `false`
 
-Application is running using actual XMLHTTPRequest layer with stubbed mock backend
+A Boolean value that is used to replace all occurrences
 
-that intercepts and makes response to emulate mock backend
+#### options.dir
+Type: `String`
+Default value: `empty string`
 
-===========
+A String value that is used to indicate the path where all occurrences in project should be replaced (removal to be done in next release...)
 
-In order to run the production version of app:
+### Usage Examples
 
-do all the above mentioned steps,
+#### Simplified Options
+In this example, the simplified options are used to upload files to cloudinary
 
-in CLI instead of "grunt serve", write "grunt build"
+```js
+grunt.initConfig({
+  cloudinary: {
+    options: {
+      credentials: { // cloudinary credentials
+        'api_key': 'yourapikey',
+        'api_secret': 'yourapisecret',
+        'cloud_name': 'yourcloudnamehere'
+      }
+    },
+    files: [{
+      expand: true, // should be set to true to find whole path
+      cwd: '<%= project.dist %>',
+      src: [
+        'images/**/*.ico', 'images/**/*.png', 'images/**/*.jpeg',
+        'scripts/**/*.js', 'scripts/**/*.js'
+      ]
+    }]
+  }
+});
+```
 
-You will see a /dist folder in project root folder
+#### Custom Options
+See full example with upload and replace options enabled
 
-Note, build will fail if JSLint, SCSSLint or Unit tests fail
+```js
+grunt.initConfig({
+  cloudinary: {
+    // Options for cloudinary
+    options: {
+      replace: true, // replaces originals with uploaded ones // default false
+      // in case replace is false find and replace all occurrences is not enabled
+      dir: '<%= project.dist %>/', // path where the occurrences should be replaced // defaults to ""
+      credentials: { // cloudinary credentials
+        'api_key': 'yourapikey',
+        'api_secret': 'yourapisecret',
+        'cloud_name': 'yourcloudnamehere'
+      }
+    },
+    // source files to be processed
+    files: [{
+      expand: true, // should be set to true to find whole path
+      cwd: '<%= project.dist %>',
+      src: [
+        'images/**/*.ico', 'images/**/*.png', 'images/**/*.jpeg'
+      ]
+    }, {
+      expand: true, // should be set to true to find whole path
+      cwd: '<%= project.dist %>', // use your project destination
+      src: [
+        'styles/**/*.css'
+      ]
+    }, {
+      expand: true, // should be set to true to find whole path
+      cwd: '<%= project.dist %>', // use your project destination
+      src: [
+        'scripts/**/*.js'
+      ]
+    }]
+  }
+});
+```
 
-Run index.html of the dist folder from any webserver you wish, e.g Apache, Node Http-Server or CLI Python server
+## Contributing
+In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using guidelines provided by [Github guide](https://guides.github.com/activities/contributing-to-open-source/).
 
-===========
-
-Scripts, images, svgs and styles are minimized and cached
-
-===========
-
-Build system generates the following compiled scripts
-
-app/scripts/template.js = responsible for js templates
-
-app/modules/mocks/models.js responsible for JSON mocks
-
-===========
-
-Build system generates the following report packages
-
-/docs -> Code documentation based on ngDocs
-
-/coverage -> Code coverage report
-
-src -> generated if you run "grunt todos" report for FIXME TODOS in source code
-
-===========
-
-Tests:
-
-In order to run Unit tests separately run "grunt test" command in CLI and you will see
-
-output in terminal with all existing test assertions
-
-In order to run e2e tests with protractor run "grunt serve"
-
-to start local server then run "grunt e2e" command in CLI and you will see
-
-output in terminal with all existing test assertions
-
-E2E tests have ability to take screenshots, files are generated by path:
-
-test/E2E/screenshots
-
-In order to run API tests run "grunt api" command in CLI and you will see output in terminal
-
-===========
-
-ySlow:
-
-Application is capable of running ySlow performance tests
-
-In order to run ySlow tests run "grunt yslowTest" command
-
-ySlow generates report package in ySlow folder in project root
+## Release History
+_Version: 0.5.0_
