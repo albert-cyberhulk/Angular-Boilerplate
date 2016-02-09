@@ -22,6 +22,15 @@ _Download from official website_ [Official website](https://nodejs.org/en/downlo
 
 _Download from official website_ [Official website](https://www.ruby-lang.org/de/downloads/)
 
+#####  Install SASS on your preferred system
+
+_Install using command line_
+
+```shell
+gem install sass
+```
+_Download from official website_ [Official website](http://sass-lang.com/install)
+
 ## The 'cloudinary' task
 
 ### Overview
