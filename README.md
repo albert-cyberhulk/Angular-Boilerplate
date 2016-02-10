@@ -41,108 +41,66 @@ _Install using command line_
 gem install scss_lint
 ```
 
-## The 'cloudinary' task
+#####  Install Grunt cli as a global node module
 
-### Overview
-In your project's Gruntfile, add a section named `cloudinary` to the data object passed into `grunt.initConfig()`.
-
-```js
-grunt.initConfig({
-  cloudinary: {
-      // Options for cloudinary
-      options: {},
-      // source files to be processed
-      files: [{}]
-    }
-});
+```shell
+npm install -g grunt-cli
 ```
 
-### Options
+#####  Install Bower cli as a global node module
 
-#### options.remove
-Type: `Boolean`
-Default value: `false`
-
-A Boolean value that is used remove the src files after upload (to be done in next release...).
-
-#### options.replace
-Type: `Boolean`
-Default value: `false`
-
-A Boolean value that is used to replace all occurrences
-
-#### options.dir
-Type: `String`
-Default value: `empty string`
-
-A String value that is used to indicate the path where all occurrences in project should be replaced (removal to be done in next release...)
-
-### Usage Examples
-
-#### Simplified Options
-In this example, the simplified options are used to upload files to cloudinary
-
-```js
-grunt.initConfig({
-  cloudinary: {
-    options: {
-      credentials: { // cloudinary credentials
-        'api_key': 'yourapikey',
-        'api_secret': 'yourapisecret',
-        'cloud_name': 'yourcloudnamehere'
-      }
-    },
-    files: [{
-      expand: true, // should be set to true to find whole path
-      cwd: '<%= project.dist %>',
-      src: [
-        'images/**/*.ico', 'images/**/*.png', 'images/**/*.jpeg',
-        'scripts/**/*.js', 'scripts/**/*.js'
-      ]
-    }]
-  }
-});
+```shell
+npm install -g bower
 ```
 
-#### Custom Options
-See full example with upload and replace options enabled
+#####  Install Protractor as a global node module
 
-```js
-grunt.initConfig({
-  cloudinary: {
-    // Options for cloudinary
-    options: {
-      replace: true, // replaces originals with uploaded ones // default false
-      // in case replace is false find and replace all occurrences is not enabled
-      dir: '<%= project.dist %>/', // path where the occurrences should be replaced // defaults to ""
-      credentials: { // cloudinary credentials
-        'api_key': 'yourapikey',
-        'api_secret': 'yourapisecret',
-        'cloud_name': 'yourcloudnamehere'
-      }
-    },
-    // source files to be processed
-    files: [{
-      expand: true, // should be set to true to find whole path
-      cwd: '<%= project.dist %>',
-      src: [
-        'images/**/*.ico', 'images/**/*.png', 'images/**/*.jpeg'
-      ]
-    }, {
-      expand: true, // should be set to true to find whole path
-      cwd: '<%= project.dist %>', // use your project destination
-      src: [
-        'styles/**/*.css'
-      ]
-    }, {
-      expand: true, // should be set to true to find whole path
-      cwd: '<%= project.dist %>', // use your project destination
-      src: [
-        'scripts/**/*.js'
-      ]
-    }]
-  }
-});
+```shell
+npm install -g protractor
+```
+
+#####  Install PhantomJS as a global node module
+
+```shell
+npm install -g phantomjs
+```
+
+#####  In the project path using cli run
+
+```shell
+npm install
+```
+
+```shell
+node node_modules/protractor/bin/webdriver-manager update
+```
+
+```shell
+bower install
+```
+
+#####  To run dev server type in
+
+```shell
+grunt serve
+```
+
+#####  To run unit tests type in
+
+```shell
+grunt test
+```
+
+#####  To run api tests type in
+
+```shell
+grunt api
+```
+
+#####  To run e2e tests type in
+
+```shell
+grunt e2e
 ```
 
 ## Contributing
