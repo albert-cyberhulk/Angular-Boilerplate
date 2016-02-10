@@ -31,6 +31,16 @@ gem install sass
 ```
 _Download from official website_ [Official website](http://sass-lang.com/install)
 
+#####  Install scss-lint on your preferred system
+
+_Download from official website_ [Official website](https://github.com/brigade/scss-lint)
+
+_Install using command line_
+
+```shell
+gem install scss_lint
+```
+
 ## The 'cloudinary' task
 
 ### Overview
