@@ -103,6 +103,24 @@ grunt api
 grunt e2e
 ```
 
+#####  To run ySlow tests type in
+
+```shell
+grunt yslowTest
+```
+
+#####  To build production ready version type in
+
+```shell
+grunt build
+```
+
+#####  To check existing todo-s type in
+
+```shell
+grunt todo
+```
+
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using guidelines provided by [Github guide](https://guides.github.com/activities/contributing-to-open-source/).
 
