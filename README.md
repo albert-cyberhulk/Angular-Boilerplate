@@ -1,107 +1,128 @@
-Angular Boilerplate
-==========
+# Angular-Boilerplate
 
-Angular Boilerplate for easy project bootstrap
-==========
+> Angular Boilerplate for easy project bootstrap
 
-In order to run the development version:
+## Getting Started
+This boilerplate requires Grunt `~0.4.5` and NodeJS `~4.2.2`
 
-Clone repository, checkout master branch
+If you haven't used [Grunt](http://gruntjs.com/) or [nodeJS](https://nodejs.org) before, be sure to check out the [Grunt Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to use Grunt, additionally checkout [NodeJS documentation](https://nodejs.org/en/docs/). Once you're familiar with that process, you may install this boilerplate with the following steps :
 
-Install globally nodeJS.
 
-Install globally Ruby.
+##### Import a Git repository using the command line
 
-Install SASS "sudo gem install sass"
+```shell
+git clone https://github.com/albert-cyberhulk/Angular-Boilerplate.git
+```
 
-Install SCSS lint "sudo gem install scss_lint"
+#####  Install nodeJS on your preferred system
 
-Install globally grunt CLI: "npm install grunt-cli -g"
+_Download from official website_ [Official website](https://nodejs.org/en/download/)
 
-Install globally bower packaging: "npm install bower -g"
+#####  Install Ruby on your preferred system
 
-Install globally protractor "npm install protractor -g"
+_Download from official website_ [Official website](https://www.ruby-lang.org/de/downloads/)
 
-Install globally phantomjs "npm install phantomjs -g"
+#####  Install SASS on your preferred system
 
-Enter repository: cd Angular-Boilerplate
+_Install using command line_
 
-Run "npm install"
+```shell
+gem install sass
+```
+_Download from official website_ [Official website](http://sass-lang.com/install)
 
-Run "node node_modules/protractor/bin/webdriver-manager update"
+#####  Install scss-lint on your preferred system
 
-Run "bower install"
+_Download from official website_ [Official website](https://github.com/brigade/scss-lint)
 
-Whenever everything successfully complete, run "grunt serve" from CLI
+_Install using command line_
 
-In your default browser you will see a new tab: "http://localhost:9000/#/"
+```shell
+gem install scss_lint
+```
 
-Application is running using actual XMLHTTPRequest layer with stubbed mock backend
+#####  Install Grunt cli as a global node module
 
-that intercepts and makes response to emulate mock backend
+```shell
+npm install -g grunt-cli
+```
 
-===========
+#####  Install Bower cli as a global node module
 
-In order to run the production version of app:
+```shell
+npm install -g bower
+```
 
-do all the above mentioned steps,
+#####  Install Protractor as a global node module
 
-in CLI instead of "grunt serve", write "grunt build"
+```shell
+npm install -g protractor
+```
 
-You will see a /dist folder in project root folder
+#####  Install PhantomJS as a global node module
 
-Note, build will fail if JSLint, SCSSLint or Unit tests fail
+```shell
+npm install -g phantomjs
+```
 
-Run index.html of the dist folder from any webserver you wish, e.g Apache, Node Http-Server or CLI Python server
+#####  In the project path using cli run
 
-===========
+```shell
+npm install
+```
 
-Scripts, images, svgs and styles are minimized and cached
+```shell
+node node_modules/protractor/bin/webdriver-manager update
+```
 
-===========
+```shell
+bower install
+```
 
-Build system generates the following compiled scripts
+#####  To run dev server type in
 
-app/scripts/template.js = responsible for js templates
+```shell
+grunt serve
+```
 
-app/modules/mocks/models.js responsible for JSON mocks
+#####  To run unit tests type in
 
-===========
+```shell
+grunt test
+```
 
-Build system generates the following report packages
+#####  To run api tests type in
 
-/docs -> Code documentation based on ngDocs
+```shell
+grunt api
+```
 
-/coverage -> Code coverage report
+#####  To run e2e tests type in
 
-src -> generated if you run "grunt todos" report for FIXME TODOS in source code
+```shell
+grunt e2e
+```
 
-===========
+#####  To run ySlow tests type in
 
-Tests:
+```shell
+grunt yslowTest
+```
 
-In order to run Unit tests separately run "grunt test" command in CLI and you will see
+#####  To build production ready version type in
 
-output in terminal with all existing test assertions
+```shell
+grunt build
+```
 
-In order to run e2e tests with protractor run "grunt serve"
+#####  To check existing todo-s type in
 
-to start local server then run "grunt e2e" command in CLI and you will see
+```shell
+grunt todo
+```
 
-output in terminal with all existing test assertions
+## Contributing
+In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using guidelines provided by [Github guide](https://guides.github.com/activities/contributing-to-open-source/).
 
-E2E tests have ability to take screenshots, files are generated by path:
-
-test/E2E/screenshots
-
-In order to run API tests run "grunt api" command in CLI and you will see output in terminal
-
-===========
-
-ySlow:
-
-Application is capable of running ySlow performance tests
-
-In order to run ySlow tests run "grunt yslowTest" command
-
-ySlow generates report package in ySlow folder in project root
+## Release History
+_Version: 0.5.0_
