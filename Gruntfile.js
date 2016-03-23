@@ -36,6 +36,7 @@ module.exports = function (grunt) {
       'connect:livereload',
       'html2js',
       'json',
+      'ngAnnotate',
       'watch'
     ]);
 
@@ -48,7 +49,7 @@ module.exports = function (grunt) {
   grunt.registerTask('api', [
     'mochaTest'
   ]);
-
+  
   grunt.registerTask('test', [
     'scsslint',
     'newer:jshint:test',
@@ -68,6 +69,7 @@ module.exports = function (grunt) {
     'jshint:all',
     'html2js',
     'ngdocs',
+    'ngAnnotate',
     'useminPrepare',
     'concurrent:dist', //'sass', 'copy:styles', 'copy:mockImages', 'imagemin', 'svgmin', 'htmlmin'
     'autoprefixer',
