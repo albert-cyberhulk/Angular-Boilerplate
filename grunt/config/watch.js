@@ -14,7 +14,10 @@ module.exports = {
   },
   js: {
     files: ['{.tmp,<%= project.app %>}/scripts/{,*/}*.js'],
-    tasks: ['newer:jshint:all']
+    tasks: ['newer:jshint:all', 'newer:eslint:browserFiles'],
+    options: {
+      livereload: true
+    }
   },
   jsTest: {
     files: ['test/spec/{,**/}*.js', 'test/e2e/{,**/}*.js'],
