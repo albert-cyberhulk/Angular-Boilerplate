@@ -16,7 +16,7 @@ module.exports = {
       '!/bower_components',
       '<%= project.app %>/**/scripts/**/*.js',
       '!<%= project.app %>/**/templates.js',
-      '!<%= project.app %>/common/rx-mocks/models.js'
+      '!<%= project.app %>/modules/mocks/models.js'
     ]
   },
   test: {
