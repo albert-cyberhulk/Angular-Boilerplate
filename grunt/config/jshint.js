@@ -13,7 +13,8 @@ module.exports = {
   all: [
     'Gruntfile.js',
     '<%= project.app %>/scripts/{,*/}*.js',
-    '<%= project.app %>/mock/{,*/}*.js',
+    '<%= project.app %>/modules/{,*/}*.js',
+    '!<%= project.app %>/modules/mocks/models.js',
     '!<%= project.app %>/scripts/templates.js'
   ],
   test: {
