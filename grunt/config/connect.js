@@ -15,6 +15,7 @@ module.exports = {
   livereload: {
     options: {
       open: true,
+      livereload: true,
       base: [
         '.tmp',
         '<%= project.app %>'

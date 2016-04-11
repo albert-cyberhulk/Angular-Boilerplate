@@ -10,12 +10,15 @@ module.exports = {
     jshintrc: '.jshintrc',
     reporter: require('jshint-stylish')
   },
-  all: [
-    'Gruntfile.js',
-    '<%= project.app %>/scripts/{,*/}*.js',
-    '<%= project.app %>/mock/{,*/}*.js',
-    '!<%= project.app %>/scripts/templates.js'
-  ],
+  all: {
+    src: [
+      'Gruntfile.js',
+      '!/bower_components',
+      '<%= project.app %>/**/scripts/**/*.js',
+      '!<%= project.app %>/**/templates.js',
+      '!<%= project.app %>/modules/mocks/models.js'
+    ]
+  },
   test: {
     options: {
       jshintrc: 'test/.jshintrc'
