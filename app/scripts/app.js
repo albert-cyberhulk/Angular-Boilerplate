@@ -38,5 +38,5 @@ angular.module('App', [
     }
   };
   $urlRouterProvider.otherwise(Routes.main.url);
-  $stateProvider.state(Routes.main); //
+  $stateProvider.state(Routes.main);
 });
