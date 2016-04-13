@@ -2,6 +2,13 @@ html, body {
   padding: 0px;
   margin: 0px;
 }
+body {
+  padding: 1rem;
+  background-color: $background-color;
+}
+img {
+  max-width: 100%;
+}
 nav ul{
   list-style-type: none;
 }

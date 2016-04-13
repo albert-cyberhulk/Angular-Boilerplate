@@ -1,28 +1,25 @@
 @import '../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/gradients';
-@import 'reset';
 @import 'variables';
-body {
-  padding: 1rem;
-  background-color: $background-color;
-}
-img {
-  max-width: 100%;
-}
-/*Logo and slogan*/
+@import 'reset';
+@import 'header';
 
-/*menu block*/
-.cardLink {
-    display: block;
-    color: #666;
-    text-shadow: 0 2px 0 #efefef;
-    text-decoration: none;
-    height: 2.75rem;
-    line-height: 2.75rem;
-    border-bottom: 1px solid #bbb;
-    position: relative;
+/*top-section*/
+.blog-article {
+  clear: both;
+  width: 100%;
+  box-sizing: border-box;
 }
-/*IntroWrapper*/
-.IntroWrapper {
+.blog-title, article-figure {
+  padding: 0.5rem;
+}
+/*bottom-section*/
+.section-left-content, .section-right-content {
+  font-size: 0.9rem;
+  box-sizing: border-box;
+  padding: 0.5rem;
+}
+/*footer*/
+footer {
   clear: both;
 }
 /*Media Queries*/
@@ -43,33 +40,33 @@ img {
 
 }
 @media screen and (min-width: 60rem) {
-  .introWrapper {
+  .blog-article {
     table-layout: fixed;
     width: 100%;
     display: table;
   }
-  .introText,
-  .moneyShot {
+  .blog-title,
+  .article-figure {
     display: table-cell;
     width: 50%;
     vertical-align: middle;
     text-align: center;
   }
-  .introText {
+  .blog-title {
     padding: 0.5rem;
     text-align: left;
     font-size: 1.2rem;
   }
-  .ingredients {
-    font-size: 0.9rem;
+  section.text-content {
+    width: 100%;
     float: right;
-    padding: 1rem;
-    margin: 0 0 0.5rem 1rem;
-    border-radius: 3px;
-    background-color: #ffffdf;
-    border: 2px solid #e8cfa9;
   }
-  .ingredients h3 {
-    margin: 0;
+  div.section-left-content {
+    width: 70%;
+    float: left;
+  }
+  div.section-right-content {
+    width: 30%;
+    float: left;
   }
 }
