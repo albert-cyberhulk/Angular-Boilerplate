@@ -1,59 +1,68 @@
-@import '../bower_components/bootstrap-sass/assets/stylesheets/bootstrap/mixins/gradients';
 @import 'variables';
+@import 'reset';
+@import 'header';
 
-body {
-  padding-bottom: 20px;
-  padding-top: 20px;
+/*top-section*/
+.blog-article {
+  clear: both;
+  width: 100%;
+  box-sizing: border-box;
 }
-
-%block {
-  padding-left: 15px;
-  padding-right: 15px;
-  color: $color-tapa-approx;
+.blog-title, article-figure {
+  padding: 0.5rem;
 }
+/*bottom-section*/
+.section-left-content, .section-right-content {
+  font-size: 0.9rem;
+  box-sizing: border-box;
+  padding: 0.5rem;
+}
+/*footer*/
+footer {
+  clear: both;
+}
+/*Media Queries*/
+/*iphone5*/
+@media screen and (min-width: 320px) {
 
-.header {
-  @extend %block;
-  border-bottom: 1px solid $mercury;
+}
+/*iphone6*/
+@media screen and (min-width: 375px) {
 
-  h3 {
-    line-height: 40px;
-    margin-bottom: 0;
-    margin-top: 0;
-    padding-bottom: 19px;
+}
+/*iphone6 plus*/
+@media screen and (min-width: 414px) {
+
+}
+/*ipad+*/
+@media screen and (min-width: 60rem) {
+  .blog-article {
+    table-layout: fixed;
+    width: 100%;
+    display: table;
   }
-}
-
-@mixin paragraph($colour: $mercury, $size: 12px) { // Mixin for paragraphs
-  border-radius: 5px;
-  background-color: $colour;
-  @include gradient-directional($gray, $white, 45deg);
-  font-size: $size;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  margin-top: 5px;
-}
-
-.container {
-  margin: 30px 0;
-
-  .selector- {
-
-    &a {
-      font-weight: bold;
-    }
-
-    &a, &b {
-      @include paragraph($size: 16px);
-      padding-left: 5px;
-      list-style-type: none;
-    }
+  .blog-title,
+  .article-figure {
+    display: table-cell;
+    width: 50%;
+    vertical-align: middle;
+    text-align: center;
   }
-
-}
-
-.footer {
-  @extend %block;
-  border-top: 1px solid $mercury;
+  .blog-title {
+    padding: 0.5rem;
+    text-align: left;
+    font-size: 1.2rem;
+  }
+  section.text-content {
+    width: 100%;
+    float: right;
+  }
+  div.section-left-content {
+    width: 70%;
+    float: left;
+  }
+  div.section-right-content {
+    width: 30%;
+    float: left;
+  }
 }

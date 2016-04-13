@@ -13,7 +13,7 @@ module.exports = {
       cwd: '<%= project.app %>',
       dest: '<%= project.dist %>',
       src: [
-        '*.{ico,png,txt}',
+        'images/{,*}*.{ico,png,txt}',
         '.htaccess',
         'images/{,*/}*.{webp}',
         'fonts/*',

@@ -6,9 +6,9 @@
  * @date 19.09.2015
  */
 describe('Project example test', function() {
-  it('Should have main container', function() {
+  it('Should have main semantic element', function() {
     browser.get('http://127.0.0.1:9000/');
-    var myElement = element(by.css('.container'));
+    var myElement = element(by.tagName('main'));
     expect(myElement.isPresent()).toBe(true);
   });
 });

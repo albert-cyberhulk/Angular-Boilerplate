@@ -7,8 +7,8 @@ plugin_gems: []
 
 linters:
   BangFormat:
-    enabled: true
-    space_before_bang: true
+    enabled: false
+    space_before_bang: false
     space_after_bang: false
 
   BemDepth:
@@ -16,96 +16,96 @@ linters:
     max_elements: 1
 
   BorderZero:
-    enabled: true
+    enabled: false
     convention: zero # or `none`
 
   ColorKeyword:
-    enabled: true
+    enabled: false
 
   ColorVariable:
-    enabled: true
+    enabled: false
 
   Comment:
-    enabled: true
+    enabled: false
 
   DebugStatement:
-    enabled: true
+    enabled: false
 
   DeclarationOrder:
-    enabled: true
+    enabled: false
 
   DisableLinterReason:
     enabled: false
 
   DuplicateProperty:
-    enabled: true
+    enabled: false
 
   ElsePlacement:
-    enabled: true
+    enabled: false
     style: same_line # or 'new_line'
 
   EmptyLineBetweenBlocks:
-    enabled: true
-    ignore_single_line_blocks: true
+    enabled: false
+    ignore_single_line_blocks: false
 
   EmptyRule:
-    enabled: true
+    enabled: false
 
   ExtendDirective:
     enabled: false
 
   FinalNewline:
-    enabled: true
-    present: true
+    enabled: false
+    present: false
 
   HexLength:
-    enabled: true
+    enabled: false
     style: short # or 'long'
 
   HexNotation:
-    enabled: true
+    enabled: false
     style: lowercase # or 'uppercase'
 
   HexValidation:
-    enabled: true
+    enabled: false
 
   IdSelector:
-    enabled: true
+    enabled: false
 
   ImportantRule:
     enabled: false
 
   ImportPath:
-    enabled: true
+    enabled: false
     leading_underscore: false
     filename_extension: false
 
   Indentation:
-    enabled: true
+    enabled: false
     allow_non_nested_indentation: false
     character: space # or 'tab'
     width: 2
 
   LeadingZero:
-    enabled: true
+    enabled: false
     style: exclude_zero # or 'include_zero'
 
   MergeableSelector:
-    enabled: true
-    force_nesting: true
+    enabled: false
+    force_nesting: false
 
   NameFormat:
-    enabled: true
-    allow_leading_underscore: true
+    enabled: false
+    allow_leading_underscore: false
     convention: hyphenated_lowercase # or 'camel_case', or 'snake_case', or a regex pattern
 
   NestingDepth:
-    enabled: true
+    enabled: false
     max_depth: 5
     ignore_parent_selectors: false
 
   PlaceholderInExtend:
-    enabled: true
+    enabled: false
 
   PropertyCount:
     enabled: false
@@ -119,11 +119,11 @@ linters:
     separate_groups: false
 
   PropertySpelling:
-    enabled: true
+    enabled: false
     extra_properties: []
 
   PropertyUnits:
-    enabled: true
+    enabled: false
     global: [
       'ch', 'em', 'ex', 'rem',                 # Font-relative lengths
       'cm', 'in', 'mm', 'pc', 'pt', 'px', 'q', # Absolute lengths
@@ -142,7 +142,7 @@ linters:
     allow_element_with_id: false
 
   SelectorDepth:
-    enabled: true
+    enabled: false
     max_depth: 4
 
   SelectorFormat:
@@ -150,52 +150,52 @@ linters:
     convention: hyphenated_lowercase # or 'strict_BEM', or 'hyphenated_BEM', or 'snake_case', or 'camel_case', or a regex pattern
 
   Shorthand:
-    enabled: true
+    enabled: false
     allowed_shorthands: [1, 2, 3]
 
   SingleLinePerProperty:
-    enabled: true
-    allow_single_line_rule_sets: true
+    enabled: false
+    allow_single_line_rule_sets: false
 
   SingleLinePerSelector:
     enabled: false
 
   SpaceAfterComma:
-    enabled: true
+    enabled: false
     style: one_space # or 'no_space', or 'at_least_one_space'
 
   SpaceAfterPropertyColon:
-    enabled: true
+    enabled: false
     style: one_space # or 'no_space', or 'at_least_one_space', or 'aligned'
 
   SpaceAfterPropertyName:
-    enabled: true
+    enabled: false
 
   SpaceAfterVariableName:
-    enabled: true
+    enabled: false
 
   SpaceAroundOperator:
-    enabled: true
+    enabled: false
     style: one_space # or 'no_space'
 
   SpaceBeforeBrace:
-    enabled: true
+    enabled: false
     style: space # or 'new_line'
     allow_single_line_padding: false
 
   SpaceBetweenParens:
-    enabled: true
+    enabled: false
     spaces: 0
 
   StringQuotes:
-    enabled: true
+    enabled: false
     style: single_quotes # or double_quotes
 
   TrailingSemicolon:
-    enabled: true
+    enabled: false
 
   TrailingWhitespace:
-    enabled: true
+    enabled: false
 
   TrailingZero:
     enabled: false
@@ -204,16 +204,16 @@ linters:
     enabled: false
 
   UnnecessaryMantissa:
-    enabled: true
+    enabled: false
 
   UnnecessaryParentReference:
-    enabled: true
+    enabled: false
 
   UrlFormat:
-    enabled: true
+    enabled: false
 
   UrlQuotes:
-    enabled: true
+    enabled: false
 
   VariableForProperty:
     enabled: false
@@ -226,7 +226,7 @@ linters:
     excluded_identifiers: []
 
   ZeroUnit:
-    enabled: true
+    enabled: false
 
   Compass::*:
     enabled: false

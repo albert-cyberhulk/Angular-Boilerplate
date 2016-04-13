@@ -3,15 +3,11 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
+    <title>Angular Boilerplate</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-        <!-- build:css({.tmp,app}) styles/vendor.css -->
-        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
-        <!-- endbuild -->
         <!-- build:css({.tmp,app}) styles/styles.css -->
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
@@ -22,11 +18,11 @@
     <![endif]-->
 
     <!--header of application-->
-    <div ng-include src="'views/header.html'"></div>
+    <header ng-include src="'views/header.html'"></header>
     <!-- Add your site or application content here -->
-    <div class="container" ui-view id="main-view"></div>
+    <main ui-view></main>
     <!--footer of application-->
-    <div ng-include src="'views/footer.html'"></div>
+    <footer ng-include src="'views/footer.html'"></footer>
         <!-- build:js scripts/vendor.js -->
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
         <script src="bower_components/underscore/underscore.js"></script>

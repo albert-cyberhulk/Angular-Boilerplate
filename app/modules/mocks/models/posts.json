@@ -4,7 +4,27 @@
     "surname": "Boilerplate"
   },
   {
-    "name": "Fast and Robust",
-    "surname": "Project setup"
+    "name": "Local dev server",
+    "surname": "'grunt serve'"
+  },
+  {
+    "name": "Build setup for you",
+    "surname": "'grunt build'"
+  },
+  {
+    "name": "Tests setup for you",
+    "surname": "'grunt test'"
+  },
+  {
+    "name": "E2E tests setup for you",
+    "surname": "'grunt e2e'"
+  },
+  {
+    "name": "API tests setup for you",
+    "surname": "'grunt api'"
+  },
+  {
+    "name": "ySlow tests setup for you",
+    "surname": "'grunt ySlowtest'"
   }
 ]
