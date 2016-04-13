@@ -7,7 +7,7 @@
 // Make sure SCSS code styles are up to par and there are no obvious mistakes
 module.exports = {
   allFiles: [
-    '<%= project.app %>/styles/{,*/}*.scss'
+    '<%= project.app %>/styles/dummy/main.scss'
   ],
   options: {
     bundleExec: false,
