@@ -24,13 +24,9 @@
     <div class="section-right-content">
       <h3>Additional info</h3>
       <ul>
-        <li>Morbi in sem quis dui placerat ornare.</li>
-        <li>Morbi in sem quis dui placerat ornare.</li>
-        <li>Morbi in sem quis dui placerat ornare.</li>
-        <li>Morbi in sem quis dui placerat ornare.</li>
-        <li>Morbi in sem quis dui placerat ornare.</li>
-        <li>Morbi in sem quis dui placerat ornare.</li>
-        <li>Morbi in sem quis dui placerat ornare.</li>
+        <li class="selector-b" ng-repeat="post in posts track by $index">
+          {{post.name}} | {{post.surname}}
+        </li>
       </ul>
     </div>
     </section>
