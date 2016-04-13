@@ -17,7 +17,7 @@ angular.module('App').factory('Posts', ['Request', '$log', function(Request, $lo
   return {
     getPosts: function() {
       var postsUrl = 'http://private-5e4dd-angularboilerplate.apiary-mock.com/api/posts';
-      // @ifdef DEBUG
+      // @if DEBUG
       postsUrl = '/api/posts';
       // @endif
       return Request.send(postsUrl, 'get');
