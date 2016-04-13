@@ -16,7 +16,11 @@
 angular.module('App').factory('Posts', ['Request', '$log', function(Request, $log) {
   return {
     getPosts: function() {
-      return Request.send('/api/posts', 'get');
+      var postsUrl = 'http://private-5e4dd-angularboilerplate.apiary-mock.com/api/posts';
+      // @ifdef DEBUG
+      postsUrl = '/api/posts';
+      // @endif
+      return Request.send(postsUrl, 'get');
     }
   };
 }]);
