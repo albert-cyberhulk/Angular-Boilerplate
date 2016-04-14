@@ -11,6 +11,26 @@
     border-bottom: 1px solid #bbb;
     position: relative;
 }
+.menu-link-home {
+  &::before {
+    content: "♥";
+  }
+}
+.menu-link-about {
+  &::before {
+    content: "♣";
+  }
+}
+.menu-link-blog {
+  &::before {
+    content: "♠";
+  }
+}
+.menu-link-contact {
+  &::before {
+    content: "♦";
+  }
+}
 @media screen and (max-width: 59rem) {
   .logo {
     width: 60px;
