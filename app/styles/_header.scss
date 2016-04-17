@@ -10,6 +10,14 @@
     line-height: 2.75rem;
     border-bottom: 1px solid #bbb;
     position: relative;
+
+    &::before {
+        display: none;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+    }
 }
 .menu-link-home {
   &::before {
@@ -29,6 +37,15 @@
 .menu-link-contact {
   &::before {
     content: "♦";
+  }
+}
+@media screen and (min-width: 300px) {
+  .menu-link::before {
+    display: block;
+  }
+  .menu-link {
+    padding-left: 1.8rem;
+    font-size: 1.6rem;
   }
 }
 @media screen and (max-width: 59rem) {
