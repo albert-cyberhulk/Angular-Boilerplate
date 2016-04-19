@@ -1,25 +1,15 @@
 /**
- * @file
+ * @file env.js
  * @author Albert Cyberhulk
- * @date 19/04/16
+ * @date 19/04/2016
  */
 
+// The actual grunt server settings
 module.exports = {
-  options: {
-    inline: true,
-    context : {
-      DEBUG: false
-    }
-  },
-  prod : {
-    src: [
-      '<%= project.dist %>/index.html',
-      '.tmp/concat/scripts/scripts.js'
-    ]
-  },
   dev: {
-    src: [
-      '<%= project.temp %>/index.html'
-    ]
+    NODE_ENV : 'development',
+  },
+  prod: {
+    NODE_ENV : 'production'
   }
 };
