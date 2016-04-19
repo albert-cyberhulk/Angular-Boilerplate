@@ -1,49 +1,93 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Angular Boilerplate</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-        <!-- build:css({.tmp,app}) styles/styles.css -->
-        <link rel="stylesheet" href="styles/main.css">
-        <!-- endbuild -->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Angular Boilerplate</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+  <!-- build:css({.tmp,app}) styles/styles.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
 </head>
-  <body ng-app="App">
-    <!--[if lt IE 9]>
+
+<body ng-app="App">
+  <!--[if lt IE 9]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://windows.microsoft.com/en-GB/internet-explorer/download-ie">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <!--header of application-->
-    <header ng-include src="'views/header.html'"></header>
-    <!-- Add your site or application content here -->
-    <main ui-view></main>
-    <!--footer of application-->
-    <footer ng-include src="'views/footer.html'"></footer>
-        <!-- build:js scripts/vendor.js -->
-        <script src="bower_components/jquery/dist/jquery.min.js"></script>
-        <script src="bower_components/underscore/underscore.js"></script>
-        <script src="bower_components/angular/angular.js"></script>
-        <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-        <!-- endbuild -->
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <!--Main files-->
-        <script src="scripts/templates.js"></script>
-        <script src="scripts/app.js"></script>
-        <!--Logic-->
-        <script src="scripts/services/request.js"></script>
-        <script src="scripts/services/posts.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <!-- endbuild -->
-        <!-- @if DEBUG -->
-        <!--Mocks-->
-        <script src="bower_components/angular-mocks/angular-mocks.js"></script>
-        <script src="modules/mocks/config/request-urls.js"></script>
-        <script src="modules/mocks/mock-register.js"></script>
-        <script src="modules/mocks/models.js"></script>
-        <!-- @endif -->
+  <!--header of application-->
+  <header ng-include src="'views/header.html'"></header>
+  <!-- Add your site or application content here -->
+  <main ui-view></main>
+  <!--footer of application-->
+  <footer ng-include src="'views/footer.html'"></footer>
+  <!-- build:js scripts/vendor.js -->
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/underscore/underscore.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <!-- endbuild -->
+  <!-- build:js({.tmp,app}) scripts/scripts.js -->
+  <!--Main files-->
+  <script src="scripts/templates.js"></script>
+  <script src="scripts/app.js"></script>
+  <!--Logic-->
+  <script src="scripts/services/request.js"></script>
+  <script src="scripts/services/posts.js"></script>
+  <script src="scripts/controllers/main.js"></script>
+  <!-- endbuild -->
+  <!-- @if NODE_ENV='development' -->
+  <!--Mocks-->
+  <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+  <script src="modules/mocks/config/request-urls.js"></script>
+  <script src="modules/mocks/mock-register.js"></script>
+  <script src="modules/mocks/models.js"></script>
+  <!-- @endif -->
+  <!-- tracking provider -->
+  <!-- @if NODE_ENV='development' -->
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics_debug.js', 'ga');
+
+    window.ga_debug = {
+      trace: true
+    };
+    ga('create', 'UA-XXXXX-Y', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <!-- @endif -->
+  <!-- @if NODE_ENV='production' -->
+  <!-- Google Analytics -->
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-XXXXX-Y', 'auto');
+    ga('send', 'pageview');
+  </script>
+  <!-- End Google Analytics -->
+  <!-- @endif -->
 </body>
+
 </html>

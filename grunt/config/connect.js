@@ -1,7 +1,7 @@
 /**
- * @file connect.js
+ * @file
  * @author Albert Cyberhulk
- * @date 09/10/15
+ * @date 05/10/15
  */
 
 // The actual grunt server settings
@@ -10,13 +10,19 @@ module.exports = {
     port: 9000,
     // Change this to '0.0.0.0' to access the server from outside.
     hostname: 'localhost',
-    livereload: 35729
+    livereload: 35729,
+    base: {
+      path: '<%= project.temp %>',
+        options: {
+          index: 'index.html'
+        }
+    }
   },
   livereload: {
     options: {
       open: true,
       base: [
-        '.tmp',
+        '<%= project.temp %>',
         '<%= project.app %>'
       ]
     }

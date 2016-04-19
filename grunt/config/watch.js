@@ -29,6 +29,12 @@ module.exports = {
   gruntfile: {
     files: ['Gruntfile.js']
   },
+  index: {
+    files: [
+      '<%= project.app %>/index.html'
+    ],
+    tasks: ['copy:index', 'preprocess:dev']
+  },
   livereload: {
     options: {
       livereload: '<%= connect.options.livereload %>'
