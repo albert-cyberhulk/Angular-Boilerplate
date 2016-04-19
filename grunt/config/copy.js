@@ -46,5 +46,11 @@ module.exports = {
     cwd: '<%= project.app %>/mock/images',
     dest: '<%= project.dist %>/mock/images/',
     src: '{,*/}*.**'
-  }
+  },
+  index: {
+    expand: true,
+    cwd: '<%= project.app %>',
+    dest: '<%= project.temp %>/',
+    src: 'index.html'
+   }
 };

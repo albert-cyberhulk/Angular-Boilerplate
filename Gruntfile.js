@@ -25,9 +25,12 @@ module.exports = function (grunt) {
   grunt.initConfig(config);
 
   grunt.registerTask('serve', function (target) {
-   
+
     grunt.task.run([
       'clean:tmp',
+      'copy:index',
+      'env:dev',
+      'preprocess:dev',
       'concurrent:server',  //'scsslint', 'sass', 'copy:styles', 'newer:jshint', 'eslint:browserFiles'
       'autoprefixer',
       'connect:livereload',
@@ -72,8 +75,12 @@ module.exports = function (grunt) {
     'concat',
     'preprocess:html',
     'preprocess:js',
+    'preprocess:html',
+    'preprocess:js',
     'ngmin',
     'copy:dist',
+    'env:prod',
+    'preprocess:prod',
     'cssmin',
     'uglify',
     'rev',
