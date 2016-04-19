@@ -14,7 +14,7 @@ module.exports = {
   prod : {
     src: [
       '<%= project.dist %>/index.html',
-      '<%= project.dist %>/scripts/scripts.js'
+      '<%= project.temp %>/concat/scripts/scripts.js'
     ]
   },
   dev: {
