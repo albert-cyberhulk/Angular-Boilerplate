@@ -7,7 +7,7 @@
  * @author Albert Stepanyan
  * @date 16.09.2015
  */
- 
+
 /**
  * @namespace Mocks
  * @class Mocks

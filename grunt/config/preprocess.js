@@ -1,7 +1,7 @@
 /**
- * @file preprocess.js
+ * @file
  * @author Albert Cyberhulk
- * @date 09/10/15
+ * @date 19/04/16
  */
 
 module.exports = {
@@ -11,12 +11,15 @@ module.exports = {
       DEBUG: false
     }
   },
-  html : {
-    src : [
-      '<%= project.dist %>/index.html'
+  prod : {
+    src: [
+      '<%= project.dist %>/index.html',
+      '.tmp/concat/scripts/scripts.js'
     ]
   },
-  js : {
-    src: '.tmp/concat/scripts/scripts.js'
+  dev: {
+    src: [
+      '<%= project.temp %>/index.html'
+    ]
   }
 };
