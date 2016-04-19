@@ -22,7 +22,7 @@ angular.module('Mocks', []);
  * ngRoute, ngMock, AppServices, AppControllers, AppDirectives
  */
 angular.module('App', [
-  // @if DEBUG
+  // @if NODE_ENV='development'
   'ngMockE2E',
   'Mocks',
   // @endif
