@@ -22,10 +22,10 @@ angular.module('Mocks', []);
  * ngRoute, ngMock, AppServices, AppControllers, AppDirectives
  */
 angular.module('App', [
-  // @if NODE_ENV='development'
+  /* @if NODE_ENV=='development' */
   'ngMockE2E',
   'Mocks',
-  // @endif
+  /* @endif */
   'ui.router',
   'AppTemplates'
 ]).config(function ($stateProvider, $urlRouterProvider) {
