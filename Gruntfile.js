@@ -25,10 +25,7 @@ module.exports = function (grunt) {
   grunt.initConfig(config);
 
   grunt.registerTask('serve', function (target) {
-    if (target === 'dist') {
-      return grunt.task.run(['build', 'connect:dist:keepalive']);
-    }
-
+   
     grunt.task.run([
       'clean:tmp',
       'concurrent:server',  //'scsslint', 'sass', 'copy:styles', 'newer:jshint', 'eslint:browserFiles'
