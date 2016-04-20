@@ -21,22 +21,22 @@
 }
 .menu-link-home {
   &::before {
-    content: "♥";
+    content: "\2660";
   }
 }
 .menu-link-about {
   &::before {
-    content: "♣";
+    content: "\2663";
   }
 }
 .menu-link-blog {
   &::before {
-    content: "♠";
+    content: "\2665";
   }
 }
 .menu-link-contact {
   &::before {
-    content: "♦";
+    content: "\2666";
   }
 }
 @media screen and (min-width: 300px) {
