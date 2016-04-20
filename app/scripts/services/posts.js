@@ -10,17 +10,14 @@
  * @namespace app
  * @class Request
  * Angular factory service for posts data layer
- * @param {Object} Request
+ * @param {Object} $resource
  * @return {Object}
  */
-angular.module('App').factory('Posts', ['Request', '$log', function(Request, $log) {
-  return {
-    getPosts: function() {
-      var postsUrl = 'http://private-5e4dd-angularboilerplate.apiary-mock.com/api/posts';
-      // @if DEBUG
-      postsUrl = '/api/posts';
-      // @endif
-      return Request.send(postsUrl, 'get');
-    }
-  };
+angular.module('App').factory('Posts', ['$resource', function ($resource) {
+  var postsUrl = 'http://private-5e4dd-angularboilerplate.apiary-mock.com/api/posts';
+  // @if DEBUG
+  postsUrl = '/api/posts';
+  // @endif
+
+  return $resource(postsUrl);
 }]);
