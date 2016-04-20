@@ -27,16 +27,18 @@ angular.module('App', [
   'Mocks',
   /* @endif */
   'ui.router',
+  'ngResource',
   'AppTemplates'
-]).config(function ($stateProvider, $urlRouterProvider) {
-  var Routes = {
-    main: {
-      name: 'main',
-      url: '/',
-      templateUrl: 'views/main.html',
-      controller: 'MainCtrl'
-    }
-  };
+]).config(['$stateProvider', '$urlRouterProvider', 'Routes', '_Provider', function ($stateProvider, $urlRouterProvider, Routes, _) {
+  /*Set default path*/
   $urlRouterProvider.otherwise(Routes.main.url);
-  $stateProvider.state(Routes.main);
-});
+
+  /**
+   * Register all routes from constant
+   */
+  _.forEach(Routes, function (value, key) {
+    if (_.has(Routes, key)) {
+      $stateProvider.state(value);
+    }
+  });
+}]);
