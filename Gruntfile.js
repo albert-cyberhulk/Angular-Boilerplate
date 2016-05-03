@@ -2,7 +2,7 @@
 /**
  * @file Gruntfiles.js
  * main file for managing grunt configuration
- * @author Albert Stepanyan
+ * @author Albert Cyberhulk
  * @date 03.05.2016
  */
 
