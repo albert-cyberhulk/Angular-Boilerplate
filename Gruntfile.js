@@ -1,4 +1,10 @@
 'use strict';
+/**
+ * @file Gruntfiles.js
+ * main file for managing grunt configuration
+ * @author Albert Stepanyan
+ * @date 03.05.2016
+ */
 
 // # Globbing
 // for performance reasons we're only matching one level down:
