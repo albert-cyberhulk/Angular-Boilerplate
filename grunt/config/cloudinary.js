@@ -12,9 +12,9 @@ module.exports = {
         replace: true, // replaces originals with uploaded ones // default false
         dir: '<%= project.dist %>/', // path where the occurencies should be replaced
         credentials: { // cloudinary credentials
-          'api_key': '311552493797948',
-          'api_secret': 'IZ9Q25aTQY13TfgnqD-GA70yBpw',
-          'cloud_name': 'cyberhulk-net'
+          'api_key': 'Your api ket',
+          'api_secret': 'Your api secret',
+          'cloud_name': 'Your cloud name'
         }
       },
       // source files to be processed
