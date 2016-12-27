@@ -76,9 +76,10 @@ module.exports.tasks = {
     }
   },
 
-  // Allow the use of non-minsafe AngularJS files. Automatically makes it
-  // minsafe compatible so Uglify does not destroy the ng references
-  ngmin: {
+  ngAnnotate: {
+    options: {
+      singleQuotes: true
+    },
     dist: {
       files: [{
         expand: true,

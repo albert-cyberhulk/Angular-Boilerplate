@@ -82,7 +82,7 @@ module.exports = function (grunt) {
     'copy:dist',
     'env:prod',
     'preprocess:prod',
-    'ngmin',
+    'ngAnnotate',
     'cssmin',
     'uglify',
     'rev',
