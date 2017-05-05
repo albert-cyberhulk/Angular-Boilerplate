@@ -1,6 +1,6 @@
 {
   "name": "Angular-Boilerplate",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "dependencies": {
     "jquery": "^2.1.4",
     "angular": "~1.4.5",
